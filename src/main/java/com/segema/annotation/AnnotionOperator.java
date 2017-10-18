@@ -6,7 +6,8 @@ import java.lang.reflect.Method;
 
 public class AnnotionOperator {
     public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException {
-        SayHiEmlement element = new SayHiEmlement(); // 初始化一个实例，用于方法调用
+       
+    	SayHiEmlement element = new SayHiEmlement(); // 初始化一个实例，用于方法调用
         Method[] methods = SayHiEmlement.class.getDeclaredMethods(); // 获得所有方法
         
         for (Method method : methods) {

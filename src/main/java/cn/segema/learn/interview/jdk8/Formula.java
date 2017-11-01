@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.java8;
+package cn.segema.learn.interview.jdk8;
 
 
 /**

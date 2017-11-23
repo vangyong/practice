@@ -3,6 +3,7 @@ package cn.segema.learn.interview.jdk7.concurrent;
 import java.util.concurrent.RecursiveTask;
 
 public class Calculator extends RecursiveTask<Integer>  {
+	
 	 private static final long serialVersionUID = 7333472779649130114L;
 
 	    private static final int THRESHOLD = 10;

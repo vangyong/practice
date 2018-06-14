@@ -1,20 +1,21 @@
 package cn.segema.learn.interview.jvm;
 
 public class Test1 {
-	
-	static void 打印(String a){
-		
-		System.out.println("ceshi zhongwen dayin"+a);
-	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		打印("a");
+
+		String s1 = new String("AB");
 		
-		类A  s1= new 类A();
-		s1.setA("test");
+		System.out.println(s1);
+		System.out.println(System.identityHashCode(s1));
 		
-		System.out.println(s1.getA());
+//		s1 = s1+"B";
+//		System.out.println(System.identityHashCode(s1));
+		
+		String  s2 = new String("AB");
+		
+		System.out.println(System.identityHashCode(s2));
+
 	}
 
 }

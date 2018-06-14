@@ -3,6 +3,7 @@ package cn.segema.learn.thread;
 public class TraditionanlThread {
 
 	public static void main(String[] args) {
+		
 		Thread thread = new Thread("线程1") {
 			@Override
 			public void run() {

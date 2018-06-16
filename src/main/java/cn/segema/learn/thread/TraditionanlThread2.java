@@ -24,9 +24,9 @@ public class TraditionanlThread2 {
 		thread.run();
 		
 		
+		Thread thread2 = new Thread("线程1");
 		
-		
-		
+		thread2.run();
 		
 		
 	}

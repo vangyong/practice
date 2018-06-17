@@ -44,11 +44,11 @@ public class LockTest {
 		// thread2.start();
 		//
 
-//		ExecutorService executor = Executors.newSingleThreadExecutor();
-//		executor.submit(() -> {
-//			String threadName = Thread.currentThread().getName();
-//			System.out.println("Hello" + threadName);
-//		});
+		// ExecutorService executor = Executors.newSingleThreadExecutor();
+		// executor.submit(() -> {
+		// String threadName = Thread.currentThread().getName();
+		// System.out.println("Hello" + threadName);
+		// });
 
 		// try {
 		// System.out.println("attempt to shutdown executor");
@@ -73,8 +73,7 @@ public class LockTest {
 			}
 		};
 
-		
-		ExecutorService executor = Executors.newFixedThreadPool(1); 
+		ExecutorService executor = Executors.newFixedThreadPool(1);
 		Future future = executor.submit(task);
 
 		System.out.println("future done? " + future.isDone());
@@ -82,21 +81,12 @@ public class LockTest {
 		Integer result;
 		try {
 			result = (Integer) future.get();
-			System.out.println("future done?" + future.isDone()); 
-			System.out.print("result:" + result); 
+			System.out.println("future done?" + future.isDone());
+			System.out.print("result:" + result);
 		} catch (InterruptedException | ExecutionException e) {
 			e.printStackTrace();
 		}
 
-		
-		HashMap HashMap = new HashMap();
-		
-		ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-		
-		
-		
-		
-		
 	}
 
 }

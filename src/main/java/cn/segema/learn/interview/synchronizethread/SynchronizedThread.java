@@ -40,12 +40,12 @@ public class SynchronizedThread {
         }
         
         /**
-         * 用同步方法实现
+         * 用锁实现
          * 
          * @param money
          */
         public  void save2(int money) {
-        	 lock.lock();
+        	 	lock.lock();
              try{
                  account += money;
              }finally{
@@ -64,8 +64,8 @@ public class SynchronizedThread {
         @Override
         public void run() {
             for (int i = 0; i < 10; i++) {
-                // bank.save1(10);
-                bank.save(10);
+                bank.save1(10);
+             //  bank.save(10);
                 System.out.println(i + "账户余额为：" + bank.getAccount());
             }
         }

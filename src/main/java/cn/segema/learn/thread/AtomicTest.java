@@ -2,11 +2,32 @@ package cn.segema.learn.thread;
 
 import java.awt.geom.CubicCurve2D;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class AtomicTest {
 
 	public static void main(String[] args) {
+		//testAddString();
+		
+		AtomicInteger AtomicInteger;
+		AbstractQueuedSynchronizer AbstractQueuedSynchronizer = new AbstractQueuedSynchronizerDemo();
+		CountDownLatch CountDownLatch;
+		Semaphore Semaphore;
+		ReentrantLock ReentrantLock;
+		
+		
+		
+		
+		
+		
+	}
+
+	private static void testAddString() {
 		System.out.println("aaa");
 		String a1 = "1111145566778";
 		String b1 = "789987";
@@ -37,7 +58,9 @@ public class AtomicTest {
 		if(l1-l2>0) {
 			
 		}
-		
 	}
+	
+	
+	
 
 }

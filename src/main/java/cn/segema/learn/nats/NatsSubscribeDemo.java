@@ -2,18 +2,14 @@ package cn.segema.learn.nats;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
 import java.util.concurrent.TimeoutException;
 
 import io.nats.client.Connection;
 import io.nats.client.Dispatcher;
-import io.nats.client.Message;
-import io.nats.client.MessageHandler;
 import io.nats.client.Nats;
-import io.nats.client.Subscription;
 
 /**
- * @category NatsÏû·Ñ¶Ë
+ * @category Natsæ¶ˆè´¹æ¶ˆæ¯
  * @author wangyong
  * @date 2019/05/29
  */

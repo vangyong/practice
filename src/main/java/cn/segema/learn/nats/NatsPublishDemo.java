@@ -7,7 +7,7 @@ import io.nats.client.Connection;
 import io.nats.client.Nats;
 
 /**
- * @category Nats���Ͷ�
+ * @category Nats发送消息
  * @author wangyong
  * @date 2019/05/29
  */
@@ -17,7 +17,7 @@ public class NatsPublishDemo {
         Connection nc;
         try {
             nc = Nats.connect("nats://localhost:4222");
-            nc.publish("subject", "hello world".getBytes(StandardCharsets.UTF_8));
+            nc.publish("subject", "hello world 这是我的消息".getBytes(StandardCharsets.UTF_8));
             nc.flush(Duration.ofSeconds(5));
             nc.close();
             System.out.println("sendsucess:");

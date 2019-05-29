@@ -12,7 +12,6 @@ public class ParallelStreamDemo {
 		List<Integer> listOfIntegers = new ArrayList<>(Arrays.asList(intArray));
 		List<Integer> parallelStorage = new ArrayList<>();// Collections.synchronizedList(new ArrayList<>());
 		listOfIntegers.parallelStream()
-				// Don't do this! It uses a stateful lambda expression.
 				.map(e -> {
 					parallelStorage.add(e);
 					return e;

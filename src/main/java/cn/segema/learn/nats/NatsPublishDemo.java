@@ -16,7 +16,7 @@ public class NatsPublishDemo {
         
         Connection nc;
         try {
-            nc = Nats.connect("nats://localhost:4222");
+            nc = Nats.connect("nats://10.10.19.53:4222");
             nc.publish("subject", "hello world 这是我的消息".getBytes(StandardCharsets.UTF_8));
             nc.flush(Duration.ofSeconds(5));
             nc.close();

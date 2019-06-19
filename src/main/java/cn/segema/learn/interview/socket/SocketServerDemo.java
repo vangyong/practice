@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketManager {
+public class SocketServerDemo {
     public static void main(String[] args) {
-        SocketManager manager = new SocketManager();
+        SocketServerDemo manager = new SocketServerDemo();
         manager.doListen();
     }
 

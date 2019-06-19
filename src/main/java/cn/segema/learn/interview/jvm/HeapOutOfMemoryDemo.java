@@ -6,9 +6,9 @@ import java.util.List;
 public class HeapOutOfMemoryDemo {
 
 	public static void main(String[] args) {
-		List<TestCase> cases = new ArrayList<TestCase>();
+		List<TestCaseDomain> cases = new ArrayList<TestCaseDomain>();
 		while (true) {
-			cases.add(new TestCase());
+			cases.add(new TestCaseDomain());
 		}
 	}
 

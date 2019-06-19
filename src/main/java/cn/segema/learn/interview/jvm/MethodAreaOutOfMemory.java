@@ -24,7 +24,7 @@ public class MethodAreaOutOfMemory {
     public static void main(String[] args) {
        while(true){
            Enhancer enhancer = new Enhancer();
-           enhancer.setSuperclass(TestCase.class);
+           enhancer.setSuperclass(TestCaseDomain.class);
            enhancer.setUseCache(false);
 
            enhancer.setCallback(new MethodInterceptor() {

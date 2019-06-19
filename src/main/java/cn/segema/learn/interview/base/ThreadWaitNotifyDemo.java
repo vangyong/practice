@@ -1,13 +1,13 @@
-package cn.segema.learn.interview.thread;
+package cn.segema.learn.interview.base;
 
-public class TwoThreadWaitNotify {
+public class ThreadWaitNotifyDemo {
 	private int start = 1;
 
     private boolean flag = false;
 
     public static void main(String[] args) {
     	
-        TwoThreadWaitNotify twoThread = new TwoThreadWaitNotify();
+        ThreadWaitNotifyDemo twoThread = new ThreadWaitNotifyDemo();
 
         Thread t1 = new Thread(new OuNum(twoThread));
         t1.setName("A");
@@ -25,9 +25,9 @@ public class TwoThreadWaitNotify {
      */
     public static class OuNum implements Runnable {
     	
-        private TwoThreadWaitNotify number;
+        private ThreadWaitNotifyDemo number;
 
-        public OuNum(TwoThreadWaitNotify number) {
+        public OuNum(ThreadWaitNotifyDemo number) {
             this.number = number;
         }
 
@@ -35,18 +35,18 @@ public class TwoThreadWaitNotify {
         public void run() {
 
             while (number.start <= 100) {
-                synchronized (TwoThreadWaitNotify.class) {
+                synchronized (ThreadWaitNotifyDemo.class) {
                     System.out.println("偶数线程抢到锁了");
                     if (number.flag) {
                         System.out.println(Thread.currentThread().getName() + "+-+偶数" + number.start);
                         number.start++;
 
                         number.flag = false;
-                        TwoThreadWaitNotify.class.notify();
+                        ThreadWaitNotifyDemo.class.notify();
 
                     }else {
                         try {
-                            TwoThreadWaitNotify.class.wait();
+                            ThreadWaitNotifyDemo.class.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -63,16 +63,16 @@ public class TwoThreadWaitNotify {
      */
     public static class JiNum implements Runnable {
     	
-        private TwoThreadWaitNotify number;
+        private ThreadWaitNotifyDemo number;
 
-        public JiNum(TwoThreadWaitNotify number) {
+        public JiNum(ThreadWaitNotifyDemo number) {
             this.number = number;
         }
 
         @Override
         public void run() {
             while (number.start <= 100) {
-                synchronized (TwoThreadWaitNotify.class) {
+                synchronized (ThreadWaitNotifyDemo.class) {
                     System.out.println("奇数线程抢到锁了");
                     if (!number.flag) {
                         System.out.println(Thread.currentThread().getName() + "+-+奇数" + number.start);
@@ -80,10 +80,10 @@ public class TwoThreadWaitNotify {
 
                         number.flag = true;
 
-                        TwoThreadWaitNotify.class.notify();
+                        ThreadWaitNotifyDemo.class.notify();
                     }else {
                         try {
-                            TwoThreadWaitNotify.class.wait();
+                            ThreadWaitNotifyDemo.class.wait();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

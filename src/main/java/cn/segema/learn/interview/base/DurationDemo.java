@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.datetime;
+package cn.segema.learn.interview.base;
 
 import java.time.Duration;
 

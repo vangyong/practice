@@ -7,7 +7,13 @@ public class ConcurrentLinkedQueueDemo {
 	public static void main(String[] args) {
 		ConcurrentLinkedQueue concurrentLinkedQueue = new ConcurrentLinkedQueue();
 		
-		
+//		PriorityQueue;
+//		ArrayBlockingQueue;
+//		LinkedBlockingQueue;
+//		PriorityBlockingQueue;
+//		DelayQueue;
+//		SynchronousQueue;
+//		Stack;
 	}
 
 }

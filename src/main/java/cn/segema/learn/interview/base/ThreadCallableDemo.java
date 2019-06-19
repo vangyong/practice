@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.thread;
+package cn.segema.learn.interview.base;
 
 import java.util.concurrent.*;
 import java.util.Date;
@@ -8,9 +8,8 @@ import java.util.ArrayList;
 /**
  * 有返回值的线程
  */
-public class MyThread3 {
-	public static void main(String[] args) throws ExecutionException,
-			InterruptedException {
+public class ThreadCallableDemo {
+	public static void main(String[] args) throws ExecutionException, InterruptedException {
 		System.out.println("----程序开始运行----");
 		Date date1 = new Date();
 
@@ -36,13 +35,12 @@ public class MyThread3 {
 		}
 
 		Date date2 = new Date();
-		System.out.println("----程序结束运行----，程序运行时间【"
-				+ (date2.getTime() - date1.getTime()) + "毫秒】");
+		System.out.println("----程序结束运行----，程序运行时间【" + (date2.getTime() - date1.getTime()) + "毫秒】");
 	}
 }
 
 class MyCallable implements Callable<Object> {
-	
+
 	private String taskNum;
 
 	MyCallable(String taskNum) {

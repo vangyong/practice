@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class SocketClient {
+public class SocketClientDemo {
 
 	public static void main(String[] args) {
 		Socket socket = null;

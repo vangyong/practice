@@ -1,13 +1,13 @@
 package cn.segema.learn.interview.base;
 
-public class Account{
+public class AccountDomain{
 
 	private String accountID;
 	private String name;
 	private double balance;
 	private static double minorBalance = 10.0;
 
-	public Account(String accountID, String name, double balance) {
+	public AccountDomain(String accountID, String name, double balance) {
 		this.accountID = accountID;
 		this.name = name;
 		this.balance = balance;
@@ -37,7 +37,7 @@ public class Account{
 	}
 
 	// 转账
-	public void transfer(Account a2, Account a1, double cash) {
+	public void transfer(AccountDomain a2, AccountDomain a1, double cash) {
 		if (a2.balance - cash >= minorBalance) {
 			a2.balance -= cash;
 			a1.balance += cash;
@@ -77,7 +77,7 @@ public class Account{
 	}
 
 	public static void setMinorBalance(double minorBalance) {
-		Account.minorBalance = minorBalance;
+		AccountDomain.minorBalance = minorBalance;
 	}
 
 	

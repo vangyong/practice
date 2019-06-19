@@ -1,7 +1,7 @@
-package cn.segema.learn.interview.threadlocal;
+package cn.segema.learn.interview.base;
 
 public class ThreadLocalDemo {
-	
+
 	ThreadLocal<Long> longLocal = new ThreadLocal<Long>();
 	ThreadLocal<String> stringLocal = new ThreadLocal<String>();
 
@@ -19,7 +19,7 @@ public class ThreadLocalDemo {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		final ThreadLocalDemo test = new ThreadLocalDemo();
 
 		test.set();

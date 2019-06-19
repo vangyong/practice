@@ -2,8 +2,8 @@ package cn.segema.learn.interview.base;
 
 public class AccountDemo {
 	public static void main(String[] args) {
-		Account a1 = new Account("001", "tom", 200.0);
-		Account a2 = new Account("002", "Jim", 500.0);
+		AccountDomain a1 = new AccountDomain("001", "tom", 200.0);
+		AccountDomain a2 = new AccountDomain("002", "Jim", 500.0);
 		a1.withdraw(300);
 		a1.withdraw(100);
 		a2.deposit(300);

@@ -1,6 +1,6 @@
-package cn.segema.learn.interview.file.download;
+package cn.segema.learn.interview.io;
 
-public class DownLoadTest {
+public class DownLoadDemo {
 	
 	public static void main(String[] args) {
 		 String filepath = "http://127.0.0.1:8080/file/loadfile.mkv";

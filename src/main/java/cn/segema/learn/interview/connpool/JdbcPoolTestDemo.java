@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.CountDownLatch;
 
-public class JdbcPoolMain {
+public class JdbcPoolTestDemo {
 
 	static final int threadSize = 100;
 

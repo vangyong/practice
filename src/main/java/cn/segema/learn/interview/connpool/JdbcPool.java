@@ -10,6 +10,7 @@ import java.util.Properties;
 import java.util.Vector;
 
 public class JdbcPool implements IPool {
+	
 	private static String jdbcDriver;
 
 	private static String jdbcUrl;

@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.file.download;
+package cn.segema.learn.interview.io;
 
 import java.io.File;
 import java.io.FileNotFoundException;

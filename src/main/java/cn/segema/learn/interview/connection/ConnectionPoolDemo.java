@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ConnectionPoolTest {
+public class ConnectionPoolDemo {
 	
 	static ConnectionPool pool = new ConnectionPool(10);
 	// 保证所有ConnectionRunner能够同时开始

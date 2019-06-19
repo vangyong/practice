@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.CountDownLatch;
 
-public class JdbcNoPoolMain {
+public class JdbcNoPoolTestDemo {
 	static final int threadSize = 2000;
     static JdbcPool jdbcPool = PoolManager.getInstance();
     static CountDownLatch countDownLatch1 = new CountDownLatch(1);

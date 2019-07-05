@@ -85,6 +85,8 @@
 		    <version>2.1.6</version>
 		</dependency> -->
 		
+		
+		<!-- elasticsearch -->
 		<dependency>  
             <groupId>org.elasticsearch</groupId>  
             <artifactId>elasticsearch</artifactId>  
@@ -101,6 +103,20 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.58</version>
         </dependency>
+        
+        
+        <!-- rocksdb -->
+		<dependency>
+		    <groupId>org.kevoree.mwg.plugins</groupId>
+		    <artifactId>rocksdb</artifactId>
+		    <version>6</version>
+		</dependency>
+		 
+		<dependency>
+		    <groupId>org.rocksdb</groupId>
+		    <artifactId>rocksdbjni</artifactId>
+		    <version>5.17.2</version>
+		</dependency>
 
 
 	</dependencies>

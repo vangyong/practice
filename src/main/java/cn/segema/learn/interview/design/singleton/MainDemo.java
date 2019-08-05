@@ -4,17 +4,21 @@ public class MainDemo {
 
 	static SingletonFactoryDemo singletonFactoryDemo = null;
 
-	static SingletonDemo SingletonDemo = null;
+	static SingletonDemo singletonDemo = null;
 
 	public static void main(String[] args) {
-
-	}
-
-	public static void test1() {
-		SingletonDemo = SingletonDemo.getInstance();
-		SingletonDemo.sayHello("0000");
-		singletonFactoryDemo = SingletonFactoryDemo.getInstance();
-		singletonFactoryDemo.sayHello("11111");
+		
+//		singletonDemo = SingletonDemo.getInstance();
+//		SingletonDemo.sayHello("0000");
+		
+//		singletonFactoryDemo = SingletonFactoryDemo.getInstance();
+//		singletonFactoryDemo.sayHello("11111");
+		
+		
+		//
+		Singleton singleton = Singleton.getInstance();
+		String retStr = singleton.saySingleton("singleton param");
+		System.out.println(retStr);
 	}
 
 }

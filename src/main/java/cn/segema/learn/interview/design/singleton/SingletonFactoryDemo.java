@@ -3,8 +3,7 @@ package cn.segema.learn.interview.design.singleton;
 public class SingletonFactoryDemo {
 
 	/* 私有构造方法，防止被实例化 */
-	private SingletonFactoryDemo() {
-	}
+	private SingletonFactoryDemo() {}
 
 	/* 此处使用一个内部类来维护单例 */
 	private static class SingletonFactory {
@@ -20,10 +19,10 @@ public class SingletonFactoryDemo {
 	public Object readResolve() {
 		return getInstance();
 	}
-	
-	public  static String sayHello(String param) {
+
+	public static String sayHello(String param) {
 		System.out.println(param);
 		return "sayHello";
 	}
-	
+
 }

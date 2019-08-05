@@ -13,7 +13,7 @@ public class SingletonDemo {
 	/* 静态工程方法，创建实例 */
 	public static SingletonDemo getInstance() {
 		if (instance == null) {
-			synchronized (instance) {
+			synchronized (SingletonDemo.class) {
 				if (instance == null) {
 					instance = new SingletonDemo();
 				}

@@ -16,10 +16,7 @@ public class NIOServer {
 
 	/**
 	 * 获得一个ServerSocket通道，并对该通道做一些初始化的工作
-	 * 
-	 * @param port
-	 *            绑定的端口号
-	 * @throws IOException
+	 * @param port 绑定的端口号
 	 */
 	public void initServer(int port) throws IOException {
 		// 获得一个ServerSocket通道
@@ -37,8 +34,6 @@ public class NIOServer {
 
 	/**
 	 * 采用轮询的方式监听selector上是否有需要处理的事件，如果有，则进行处理
-	 * 
-	 * @throws IOException
 	 */
 	@SuppressWarnings("unchecked")
 	public void listen() throws IOException {
@@ -48,27 +43,21 @@ public class NIOServer {
 			// 当注册的事件到达时，方法返回；否则,该方法会一直阻塞
 			selector.select();
 			// 获得selector中选中的项的迭代器，选中的项为注册的事件
-			Iterator ite = this.selector.selectedKeys().iterator();
-			while (ite.hasNext()) {
-				SelectionKey key = (SelectionKey) ite.next();
+			Iterator iterator = this.selector.selectedKeys().iterator();
+			while (iterator.hasNext()) {
+				SelectionKey selectionKey = (SelectionKey) iterator.next();
 				// 删除已选的key,以防重复处理
-				ite.remove();
+				iterator.remove();
 				// 客户端请求连接事件
-				if (key.isAcceptable()) {
-					ServerSocketChannel server = (ServerSocketChannel) key.channel();
-					// 获得和客户端连接的通道
-					SocketChannel channel = server.accept();
-					// 设置成非阻塞
-					channel.configureBlocking(false);
-
-					// 在这里可以给客户端发送信息哦
-					channel.write(ByteBuffer.wrap(new String("向客户端发送了一条信息").getBytes()));
+				if (selectionKey.isAcceptable()) {
+					ServerSocketChannel serverSocketChannel = (ServerSocketChannel) selectionKey.channel();
+					SocketChannel socketChannel = serverSocketChannel.accept();
+					socketChannel.configureBlocking(false);
+					socketChannel.write(ByteBuffer.wrap(new String("向客户端发送了一条信息").getBytes()));
 					// 在和客户端连接成功之后，为了可以接收到客户端的信息，需要给通道设置读的权限。
-					channel.register(this.selector, SelectionKey.OP_READ);
-
-					// 获得了可读的事件
-				} else if (key.isReadable()) {
-					read(key);
+					socketChannel.register(this.selector, SelectionKey.OP_READ);
+				} else if (selectionKey.isReadable()) {
+					read(selectionKey);
 				}
 
 			}
@@ -78,27 +67,22 @@ public class NIOServer {
 
 	/**
 	 * 处理读取客户端发来的信息的事件
-	 * 
-	 * @param key
-	 * @throws IOException
+	 * @param selecttionKey
 	 */
-	public void read(SelectionKey key) throws IOException {
-		// 服务器可读取消息:得到事件发生的Socket通道
-		SocketChannel channel = (SocketChannel) key.channel();
-		// 创建读取的缓冲区
-		ByteBuffer buffer = ByteBuffer.allocate(10);
-		channel.read(buffer);
+	public void read(SelectionKey selecttionKey) throws IOException {
+		SocketChannel socketChannel = (SocketChannel) selecttionKey.channel();
+		ByteBuffer buffer = ByteBuffer.allocate(20);
+		socketChannel.read(buffer);
 		byte[] data = buffer.array();
 		String msg = new String(data).trim();
 		System.out.println("服务端收到信息：" + msg);
+		// 将消息回送给客户端
 		ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());
-		channel.write(outBuffer);// 将消息回送给客户端
+		socketChannel.write(outBuffer);
 	}
 
 	/**
 	 * 启动服务端测试
-	 * 
-	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
 		NIOServer server = new NIOServer();

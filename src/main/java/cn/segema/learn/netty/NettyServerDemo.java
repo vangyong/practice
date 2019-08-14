@@ -1,39 +1,32 @@
 package cn.segema.learn.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
 
 public class NettyServerDemo {
 	public static void main(String[] args) throws Exception {
 
 		NioEventLoopGroup bossGroup = new NioEventLoopGroup();
 		NioEventLoopGroup workerGroup = new NioEventLoopGroup();
-		ServerBootstrap bootstrap = new ServerBootstrap();
-		bootstrap.group(bossGroup, workerGroup);
+		final ServerBootstrap serverBootstrap = new ServerBootstrap();
 
-		bootstrap.channel(NioServerSocketChannel.class);
+		serverBootstrap.group(bossGroup, workerGroup)
+				.channel(NioServerSocketChannel.class)
+				.option(ChannelOption.SO_BACKLOG, 1024)
+				.childOption(ChannelOption.SO_KEEPALIVE, true)
+				.childOption(ChannelOption.TCP_NODELAY, true)
+				.childHandler(new ChannelInitializer<SocketChannel>() {
+					@Override
+					protected void initChannel(SocketChannel ch) {
+						ch.pipeline().addLast(new FixedLengthFrameDecoder(31));
+					}
+				});
 
-		bootstrap.childHandler(new ChannelInitializer<SocketChannel>() {
-			@Override
-			protected void initChannel(SocketChannel ch) throws Exception {
-				ChannelPipeline pipeline = ch.pipeline();
-				// todo: add handler
-				pipeline.addLast(new StringDecoder());
-				pipeline.addLast(new SimpleChannelInboundHandler<String>() {
-                   @Override
-                   protected void channelRead0(ChannelHandlerContext ctx, String msg) {
-                       System.out.println(msg);
-                   }
-               });
-			}
-		});
-		bootstrap.bind(8080).sync();
+		serverBootstrap.bind(8080);
 	}
 }

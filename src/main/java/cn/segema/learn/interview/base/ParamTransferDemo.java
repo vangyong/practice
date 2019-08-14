@@ -3,7 +3,7 @@ package cn.segema.learn.interview.base;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransferDemo {
+public class ParamTransferDemo {
 
 	static void add(List<Integer> list) {
 		list.add(100);

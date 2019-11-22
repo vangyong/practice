@@ -21,3 +21,4 @@ Servers/
 *.log
 *.log.*
 .DS_Store
+dbfile/*

@@ -40,7 +40,7 @@ public class RocksdbDemo {
 			System.out.println("hello:" + new String(helloValue));
 			
 			//存入大文件测试
-			File f1in = new File("E:\\test\\test1.exe");
+			File f1in = new File("E:\\test\\����.rar");
 			long fileSize = f1in.length();
 			InputStream inputStream = new FileInputStream(f1in);
 //			int byteread = 0;
@@ -56,7 +56,7 @@ public class RocksdbDemo {
 			
 			//读出文件写入下载目录
 			final byte[] outf1bytes = db.get("f1".getBytes());
-			File f1out = new File("E:\\test_down\\test1.exe");
+			File f1out = new File("E:\\test_down\\����.rar");
 			OutputStream outputStream = new FileOutputStream(f1out); 
 			outputStream.write(outf1bytes); 
 			outputStream.flush();  

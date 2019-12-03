@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.segema.learn</groupId>
@@ -9,16 +10,9 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- <dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.13</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.codehaus.jackson</groupId> <artifactId>jackson-core-asl</artifactId> 
+			<version>1.9.13</version> </dependency> <dependency> <groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-mapper-asl</artifactId> <version>1.9.13</version> </dependency> -->
 
 		<dependency>
 			<groupId>cglib</groupId>
@@ -43,10 +37,16 @@
 		</dependency>
 
 		<!-- clickhouse -->
-		<dependency>
+		<!--<dependency>
 			<groupId>ru.yandex.clickhouse</groupId>
 			<artifactId>clickhouse-jdbc</artifactId>
 			<version>0.1.40</version>
+		</dependency> -->
+		
+		<dependency>
+		    <groupId>com.github.housepower</groupId>
+		    <artifactId>clickhouse-native-jdbc</artifactId>
+		    <version>1.7-stable</version>
 		</dependency>
 
 		<!-- qrcode -->
@@ -66,132 +66,150 @@
 			<artifactId>netty-all</artifactId>
 			<version>4.1.31.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-core</artifactId>
 			<version>3.2.8.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.nats</groupId>
 			<artifactId>jnats</artifactId>
 			<version>2.5.0</version>
 		</dependency>
-		
-		<!-- <dependency>
-		    <groupId>io.nats</groupId>
-		    <artifactId>java-nats-streaming</artifactId>
-		    <version>2.1.6</version>
-		</dependency> -->
-		
-		
+
+		<!-- <dependency> <groupId>io.nats</groupId> <artifactId>java-nats-streaming</artifactId> 
+			<version>2.1.6</version> </dependency> -->
+
+
 		<!-- elasticsearch -->
-		<dependency>  
-            <groupId>org.elasticsearch</groupId>  
-            <artifactId>elasticsearch</artifactId>  
-            <version>6.8.0</version>  
-        </dependency>    
 		<dependency>
-		    <groupId>org.elasticsearch.client</groupId>
-		    <artifactId>elasticsearch-rest-client</artifactId>
-		    <version>6.8.0</version>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>6.8.0</version>
 		</dependency>
-		
 		<dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
-        </dependency>
-        
-        
-        <!-- rocksdb -->
-		<dependency>
-		    <groupId>org.kevoree.mwg.plugins</groupId>
-		    <artifactId>rocksdb</artifactId>
-		    <version>6</version>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-client</artifactId>
+			<version>6.8.0</version>
 		</dependency>
-		 
+
 		<dependency>
-		    <groupId>org.rocksdb</groupId>
-		    <artifactId>rocksdbjni</artifactId>
-		    <version>5.17.2</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.58</version>
+		</dependency>
+
+
+		<!-- rocksdb -->
+		<dependency>
+			<groupId>org.kevoree.mwg.plugins</groupId>
+			<artifactId>rocksdb</artifactId>
+			<version>6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.rocksdb</groupId>
+			<artifactId>rocksdbjni</artifactId>
+			<version>5.17.2</version>
 		</dependency>
 
 		<!-- jedis -->
 		<dependency>
-		    <groupId>redis.clients</groupId>
-		    <artifactId>jedis</artifactId>
-		    <version>3.0.1</version>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>3.0.1</version>
 		</dependency>
-		
+
 		<!-- mybatis -->
 		<dependency>
-		    <groupId>org.mybatis</groupId>
-		    <artifactId>mybatis</artifactId>
-		    <version>3.5.2</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.2</version>
 		</dependency>
 		<!-- mybatis-spring -->
 		<dependency>
-		    <groupId>org.mybatis</groupId>
-		    <artifactId>mybatis-spring</artifactId>
-		    <version>2.0.2</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>2.0.2</version>
 		</dependency>
-		
+
 		<!-- spring-test -->
-		<!-- <dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-test</artifactId>
-		    <version>5.1.8.RELEASE</version>
-		    <scope>test</scope>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-test</artifactId> 
+			<version>5.1.8.RELEASE</version> <scope>test</scope> </dependency> -->
+
 		<!-- junit -->
 		<dependency>
-		    <groupId>junit</groupId>
-		    <artifactId>junit</artifactId>
-		    <version>4.12</version>
-		    <!-- <scope>test</scope> -->
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<!-- <scope>test</scope> -->
 		</dependency>
-		
+
 		<!-- hibernate-core -->
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>5.4.3.Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.3.Final</version>
 		</dependency>
-		
+
 		<!-- hibernate-entitymanager -->
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-entitymanager</artifactId>
-		    <version>5.4.3.Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.3.Final</version>
 		</dependency>
-		
+
 		<!-- hibernate-annotations -->
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-annotations</artifactId>
-		    <version>3.5.6-Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>3.5.6-Final</version>
 		</dependency>
-		
+
 		<!-- hibernate-jpa-2.1-api -->
 		<dependency>
-		    <groupId>org.hibernate.javax.persistence</groupId>
-		    <artifactId>hibernate-jpa-2.1-api</artifactId>
-		    <version>1.0.2.Final</version>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
 		</dependency>
-				
+
 		<!-- spring-webmvc -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-webmvc</artifactId>
-		    <version>5.1.9.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.1.9.RELEASE</version>
 		</dependency>
-				
-		
-		
-		
+
+		<!-- hbase-client -->
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<!-- thrift -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>jdk.tools</groupId>
+			<artifactId>jdk.tools</artifactId>
+			<version>1.8</version>
+			<scope>system</scope>
+			<systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+		</dependency>
+
 
 	</dependencies>
 	<build>

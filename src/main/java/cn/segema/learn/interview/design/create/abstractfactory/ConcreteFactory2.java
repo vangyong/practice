@@ -3,16 +3,13 @@ package cn.segema.learn.interview.design.create.abstractfactory;
 public class ConcreteFactory2 extends AbstractFactory {
 
 	@Override
-	public void createProductA() {
-		// TODO Auto-generated method stub
-		
+	public AbstractProductA createProductA() {
+		return new ProductA2();
 	}
 
 	@Override
-	public void createProductB() {
-		// TODO Auto-generated method stub
-		
+	public AbstractProductB createProductB() {
+		return new ProductB2();
 	}
-	
 	
 }

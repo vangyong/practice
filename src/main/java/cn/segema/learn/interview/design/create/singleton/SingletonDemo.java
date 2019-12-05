@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.singleton;
+package cn.segema.learn.interview.design.create.singleton;
 
 //懒汉式单例类
 public class SingletonDemo {

@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.singleton;
+package cn.segema.learn.interview.design.create.singleton;
 
 public class MainDemo {
 

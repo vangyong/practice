@@ -1,18 +1,19 @@
 package cn.segema.learn.interview.design.create.singleton;
 
-public class SingletonFactoryDemo {
+public class FactorySingleton {
 
 	/* 私有构造方法，防止被实例化 */
-	private SingletonFactoryDemo() {}
+	private FactorySingleton() {
+	}
 
 	/* 此处使用一个内部类来维护单例 */
-	private static class SingletonFactory {
-		private static SingletonFactoryDemo instance = new SingletonFactoryDemo();
+	private static class Factory {
+		private static FactorySingleton instance = new FactorySingleton();
 	}
 
 	/* 获取实例 */
-	public static SingletonFactoryDemo getInstance() {
-		return SingletonFactory.instance;
+	public static FactorySingleton getInstance() {
+		return Factory.instance;
 	}
 
 	/* 如果该对象被用于序列化，可以保证对象在序列化前后保持一致 */
@@ -20,8 +21,9 @@ public class SingletonFactoryDemo {
 		return getInstance();
 	}
 
-	public static String sayHello(String param) {
+	public String sayHello(String param) {
 		System.out.println(param);
+		System.out.println("this is FactorySingleton!");
 		return "sayHello";
 	}
 

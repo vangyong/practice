@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.adapter;
+package cn.segema.learn.interview.design.structure.adapter;
 
 public class AdapterPatternDemo {
 	public static void main(String[] args) {

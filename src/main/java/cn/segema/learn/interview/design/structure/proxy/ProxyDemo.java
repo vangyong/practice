@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.proxy;
+package cn.segema.learn.interview.design.structure.proxy;
 
 public class ProxyDemo {
 	public static void main(String[] args) {

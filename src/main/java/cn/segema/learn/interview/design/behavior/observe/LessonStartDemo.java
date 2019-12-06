@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.observe;
+package cn.segema.learn.interview.design.behavior.observe;
 
 public class LessonStartDemo {
 	

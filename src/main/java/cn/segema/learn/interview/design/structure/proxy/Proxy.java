@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.design.proxy;
+package cn.segema.learn.interview.design.structure.proxy;
 
 public class Proxy implements Sourceable {
 	

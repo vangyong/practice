@@ -1,4 +1,4 @@
-package cn.segema.learn.thrift;
+package cn.segema.learn.rpc.thrift;
 
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.protocol.TBinaryProtocol;

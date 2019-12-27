@@ -2,23 +2,23 @@ package cn.segema.learn.framework.myibatis;
 
 public class User {
 
-	public User(String id, String name, int age) {
+	public User(int id, String name, int age) {
 		super();
 		this.id = id;
 		this.age = age;
 		this.name = name;
 	}
 	
-	private String id;
+	private int id;
 	
 	private String name;
 	
 	private int age;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

@@ -10,7 +10,7 @@ public class UserMyibatisDemo {
 			int insertUser = mapper.insertUser(22, "小盒子");
 			System.out.println("影响行数:" + insertUser);
 			
-			User userParam = new User("1","Xiaoxin",21);
+			User userParam = new User(1,"Xiaoxin",21);
 			List<User> userList = mapper.selectUserList(userParam);
 			if(userList!=null&& userList.size()>0) {
 				for(User user:userList) {

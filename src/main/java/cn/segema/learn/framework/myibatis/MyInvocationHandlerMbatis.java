@@ -134,10 +134,10 @@ public class MyInvocationHandlerMbatis implements InvocationHandler {
 			Parameter parameter = parameters[i];
 			ExtParam extParam = parameter.getDeclaredAnnotation(ExtParam.class);
 			// 参数名称
-			String paramValue = extParam.value();
+			String paramName = extParam.value();
 			// 参数值
-			Object oj = args[i];
-			parameterMap.put(paramValue, oj);
+			Object paramValue = args[i];
+			parameterMap.put(paramName, paramValue);
 		}
 		return parameterMap;
 	}

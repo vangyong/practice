@@ -181,12 +181,34 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.1.9.RELEASE</version>
 		</dependency>
+		
+		
+		<!-- 添加hadoop依赖 -->
+		<dependency>
+		    <groupId>org.apache.hadoop</groupId>
+		    <artifactId>hadoop-client</artifactId>
+		    <version>3.2.1</version>
+		</dependency>
+		
+		<!-- hbase-server -->
+		<dependency>
+		    <groupId>org.apache.hbase</groupId>
+		    <artifactId>hbase-server</artifactId>
+		    <version>2.2.2</version>
+		</dependency>
 
 		<!-- hbase-client -->
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase-client</artifactId>
 			<version>2.2.2</version>
+		</dependency>
+		
+		<!-- zookeeper -->
+		<dependency>
+		    <groupId>org.apache.zookeeper</groupId>
+		    <artifactId>zookeeper</artifactId>
+		    <version>3.5.6</version>
 		</dependency>
 
 		<!-- thrift -->
@@ -209,13 +231,13 @@
 		</dependency>
 		
 		<!-- windows -->
-		<dependency>
+<!-- 		<dependency>
 		    <groupId>jdk.tools</groupId>
 		    <artifactId>jdk.tools</artifactId>
 		    <version>1.8</version>
 		    <scope>system</scope>
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
-		</dependency>
+		</dependency> -->
 
 	</dependencies>
 	<build>

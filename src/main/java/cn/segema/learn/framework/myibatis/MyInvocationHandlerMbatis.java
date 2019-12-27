@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MyInvocationHandlerMbatis  implements InvocationHandler {
+public class MyInvocationHandlerMbatis implements InvocationHandler {
 	/**
 	 * 这个就是我们要代理的真实对象
 	 */
 	private Object subject;
- 
+
 	/**
 	 * 构造方法，给我们要代理的真实对象赋初值
 	 * 
@@ -24,10 +24,9 @@ public class MyInvocationHandlerMbatis  implements InvocationHandler {
 	public MyInvocationHandlerMbatis(Object subject) {
 		this.subject = subject;
 	}
- 
+
 	/**
-	 * 该方法负责集中处理动态代理类上的所有方法调用。 调用处理器根据这三个参数进行预处理或分派到 
-     * 委托类实例上反射执行
+	 * 该方法负责集中处理动态代理类上的所有方法调用。 调用处理器根据这三个参数进行预处理或分派到 委托类实例上反射执行
 	 * 
 	 * @param proxy
 	 *            代理类实例
@@ -51,7 +50,7 @@ public class MyInvocationHandlerMbatis  implements InvocationHandler {
 		}
 		return null;
 	}
- 
+
 	public int insertSQL(ExtInsert extInsert, Method method, Object[] args) {
 		// 获取注解上的sql
 		String insertSql = extInsert.value();
@@ -75,7 +74,7 @@ public class MyInvocationHandlerMbatis  implements InvocationHandler {
 		int insertResult = JDBCUtils.insert(newSql, false, parameValues);
 		return insertResult;
 	}
- 
+
 	public Object selectMybatis(ExtSelect extInsert, Method method, Object[] args) throws SQLException {
 		try {
 			// 获取查询SQL语句
@@ -126,7 +125,7 @@ public class MyInvocationHandlerMbatis  implements InvocationHandler {
 		}
 		return null;
 	}
- 
+
 	private ConcurrentHashMap<Object, Object> getExtParams(Parameter[] parameters, Object[] args) {
 		// 获取方法上参数集合
 		ConcurrentHashMap<Object, Object> parameterMap = new ConcurrentHashMap<>();

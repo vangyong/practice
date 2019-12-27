@@ -6,7 +6,7 @@ import java.util.List;
 public class SQLUtils {
 	/**
 	 * 
-	 * 获取Insert语句后面values 参数信息<br>
+	 * 获取Insert语句后面values参数信息
 	 * 
 	 * @param sql
 	 * @return
@@ -22,7 +22,7 @@ public class SQLUtils {
 
 	/**
 	 * 
-	 * 获取select 后面where语句<br>
+	 * 获取select 后面where语句
 	 * 
 	 * @param sql
 	 * @return
@@ -41,7 +41,7 @@ public class SQLUtils {
 	}
 
 	/**
-	 * 将SQL语句的参数替换变为?<br>
+	 * 将SQL语句的参数替换变为?
 	 * 
 	 * @param sql
 	 * @param parameterName
@@ -70,7 +70,8 @@ public class SQLUtils {
 		// for (String string : sqlParameter) {
 		// System.out.println(string);
 		// }
-		List<String> sqlSelectParameter = SQLUtils.sqlSelectParameter("select * from User where userName=#{userName} and userAge=#{userAge} ");
+		List<String> sqlSelectParameter = SQLUtils
+				.sqlSelectParameter("select * from User where userName=#{userName} and userAge=#{userAge} ");
 		for (String string : sqlSelectParameter) {
 			System.out.println(string);
 		}

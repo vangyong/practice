@@ -229,6 +229,24 @@
             <version>5.3.1</version>
 		</dependency>
 		
+		<!-- webmagic -->
+		<dependency>
+           <groupId>us.codecraft</groupId>
+           <artifactId>webmagic-extension</artifactId>
+           <version>0.7.3</version>
+        </dependency>
+        <!--布隆过滤器-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>webmagic-core</artifactId>
+            <version>0.7.3</version>
+        </dependency>
+		
 		<!-- windows -->
 <!-- 		<dependency>
 		    <groupId>jdk.tools</groupId>

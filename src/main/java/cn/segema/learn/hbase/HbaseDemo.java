@@ -8,6 +8,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
+import org.apache.hadoop.hbase.HConstants;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Admin;
@@ -66,12 +67,17 @@ public class HbaseDemo {
 	// 连接集群
 	public static Connection initHbase() throws IOException {
 		Configuration configuration = HBaseConfiguration.create();
-		configuration.set("hbase.zookeeper.property.clientPort", "2181");
-		configuration.set("hbase.zookeeper.quorum", "127.0.0.1");
+		configuration.set(HConstants.ZOOKEEPER_QUORUM, "192.168.0.151");
+		configuration.set(HConstants.ZOOKEEPER_CLIENT_PORT, "2181");
+		configuration.set(HConstants.ZOOKEEPER_ZNODE_PARENT, "/hbase/master");
+
+		//configuration.set("hbase.zookeeper.property.clientPort", "2181");
+		//configuration.set("hbase.zookeeper.quorum", "192.168.0.151");
 		// 集群配置↓
 		// configuration.set("hbase.zookeeper.quorum",
 		// "101.236.39.141,101.236.46.114,101.236.46.113");
-		configuration.set("hbase.master", "127.0.0.1:60000");
+		//configuration.set(HConstants.HBASE_MASTER_LOADBALANCER_CLASS, "2181");
+		//configuration.set("hbase.master", "192.168.0.151:60000");
 		Connection connection = ConnectionFactory.createConnection(configuration);
 		return connection;
 	}

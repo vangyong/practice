@@ -13,11 +13,62 @@
 		<!-- <dependency> <groupId>org.codehaus.jackson</groupId> <artifactId>jackson-core-asl</artifactId> 
 			<version>1.9.13</version> </dependency> <dependency> <groupId>org.codehaus.jackson</groupId> 
 			<artifactId>jackson-mapper-asl</artifactId> <version>1.9.13</version> </dependency> -->
+		
+		
+		<!-- aspectjweaver -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.9.5</version>
+		    <scope>runtime</scope>
+		</dependency>
+		
+		<!-- aspectjrt -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>1.9.5</version>
+		</dependency>
+		
+		<!-- spring-aop -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aop</artifactId>
+		    <version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		<!-- spring-beans -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		<!-- spring-context -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		<!-- spring-core -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		    <version>5.2.2.RELEASE</version>
+		</dependency>
+		
+		<!-- spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>5.2.2.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
-			<version>3.2.6</version>
+			<version>3.3.0</version>
 		</dependency>
 
 
@@ -73,6 +124,7 @@
 			<version>3.2.8.RELEASE</version>
 		</dependency>
 
+		<!-- nats -->
 		<dependency>
 			<groupId>io.nats</groupId>
 			<artifactId>jnats</artifactId>
@@ -128,6 +180,7 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.5.2</version>
 		</dependency>
+		
 		<!-- mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -176,11 +229,11 @@
 		</dependency>
 
 		<!-- spring-webmvc -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.1.9.RELEASE</version>
-		</dependency>
+		</dependency> -->
 		
 		<!-- zookeeper依赖 -->
 		<dependency>

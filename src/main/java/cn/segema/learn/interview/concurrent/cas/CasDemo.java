@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.cas;
+package cn.segema.learn.interview.concurrent.cas;
 
 public class CasDemo {
 

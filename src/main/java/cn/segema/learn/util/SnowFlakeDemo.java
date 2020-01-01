@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.idgenerate;
+package cn.segema.learn.util;
 
 public class SnowFlakeDemo {
 	public static void main(String[] args) {

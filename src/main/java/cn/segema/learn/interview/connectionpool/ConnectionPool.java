@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.datasourcepool;
+package cn.segema.learn.interview.connectionpool;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -9,11 +9,9 @@ import java.sql.Statement;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
 /**
  * 出自:https://blog.csdn.net/shine4j/article/details/38487443
  * @author wangyong
- *
  */
 public class ConnectionPool {
 
@@ -30,6 +28,7 @@ public class ConnectionPool {
 	// 它中存放的对象为 PooledConnection 型
 	/**
 	 * 构造函数
+	 * 
 	 * @param jdbcDriver
 	 *            String JDBC 驱动类串
 	 * @param dbUrl
@@ -54,6 +53,7 @@ public class ConnectionPool {
 
 	/**
 	 * 返回连接池的初始大小
+	 * 
 	 * @return 初始连接池中可获得的连接数量
 	 */
 
@@ -63,6 +63,7 @@ public class ConnectionPool {
 
 	/**
 	 * 设置连接池的初始大小
+	 * 
 	 * @param 用于设置初始连接池中连接的数量
 	 */
 
@@ -72,6 +73,7 @@ public class ConnectionPool {
 
 	/**
 	 * 返回连接池自动增加的大小 、
+	 * 
 	 * @return 连接池自动增加的大小
 	 */
 
@@ -81,6 +83,7 @@ public class ConnectionPool {
 
 	/**
 	 * 设置连接池自动增加的大小
+	 * 
 	 * @param 连接池自动增加的大小
 	 */
 
@@ -90,6 +93,7 @@ public class ConnectionPool {
 
 	/**
 	 * 返回连接池中最大的可用连接数量
+	 * 
 	 * @return 连接池中最大的可用连接数量
 	 */
 	public int getMaxConnections() {
@@ -98,6 +102,7 @@ public class ConnectionPool {
 
 	/**
 	 * 设置连接池中最大可用的连接数量
+	 * 
 	 * @param 设置连接池中最大可用的连接数量值
 	 */
 	public void setMaxConnections(int maxConnections) {
@@ -106,6 +111,7 @@ public class ConnectionPool {
 
 	/**
 	 * 获取测试数据库表的名字
+	 * 
 	 * @return 测试数据库表的名字
 	 */
 	public String getTestTable() {
@@ -114,6 +120,7 @@ public class ConnectionPool {
 
 	/**
 	 * 设置测试表的名字
+	 * 
 	 * @param testTable
 	 *            String 测试表的名字
 	 */
@@ -122,8 +129,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 创建一个数据库连接池，连接池中的可用连接的数量采用类成员
-	 * initialConnections 中设置的值
+	 * 创建一个数据库连接池，连接池中的可用连接的数量采用类成员 initialConnections 中设置的值
 	 */
 	public synchronized void createPool() throws Exception {
 		// 确保连接池没有创建
@@ -142,8 +148,7 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 创建由 numConnections 指定数目的数据库连接 , 并把这些连接
-	 * 放入 connections 向量中
+	 * 创建由 numConnections 指定数目的数据库连接 , 并把这些连接 放入 connections 向量中
 	 * 
 	 * @param numConnections
 	 *            要创建的数据库连接的数目
@@ -173,6 +178,7 @@ public class ConnectionPool {
 
 	/**
 	 * 创建一个新的数据库连接并返回它
+	 * 
 	 * @return 返回一个新创建的数据库连接
 	 */
 
@@ -199,9 +205,9 @@ public class ConnectionPool {
 
 	/**
 	 * 
-	 * 通过调用 getFreeConnection() 函数返回一个可用的数据库连接 ,
-	 * 如果当前没有可用的数据库连接，并且更多的数据库连接不能创
+	 * 通过调用 getFreeConnection() 函数返回一个可用的数据库连接 , 如果当前没有可用的数据库连接，并且更多的数据库连接不能创
 	 * 建（如连接池大小的限制），此函数等待一会再尝试获取。
+	 * 
 	 * @return 返回一个可用的数据库连接对象
 	 */
 
@@ -225,10 +231,9 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 本函数从连接池向量 connections 中返回一个可用的的数据库连接，如果
-	 * 当前没有可用的数据库连接，本函数则根据 incrementalConnections 设置
-	 * 的值创建几个数据库连接，并放入连接池中。
-	 * 如果创建后，所有的连接仍都在使用中，则返回 null
+	 * 本函数从连接池向量 connections 中返回一个可用的的数据库连接，如果 当前没有可用的数据库连接，本函数则根据
+	 * incrementalConnections 设置 的值创建几个数据库连接，并放入连接池中。 如果创建后，所有的连接仍都在使用中，则返回 null
+	 * 
 	 * @return 返回一个可用的数据库连接
 	 */
 	private Connection getFreeConnection() throws SQLException {
@@ -250,8 +255,8 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 查找连接池中所有的连接，查找一个可用的数据库连接，
-	 * 如果没有可用的连接，返回 null
+	 * 查找连接池中所有的连接，查找一个可用的数据库连接， 如果没有可用的连接，返回 null
+	 * 
 	 * @return 返回一个可用的数据库连接
 	 */
 
@@ -288,16 +293,14 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 测试一个连接是否可用，如果不可用，关掉它并返回 false
-	 * 否则可用返回 true
+	 * 测试一个连接是否可用，如果不可用，关掉它并返回 false 否则可用返回 true
+	 * 
 	 * @param conn
 	 *            需要测试的数据库连接
 	 * @return 返回 true 表示此连接可用， false 表示不可用
 	 * 
 	 */
-
 	private boolean testConnection(Connection conn) {
-
 		try {
 			// 判断测试表是否存在
 			if (testTable.equals("")) {
@@ -321,11 +324,10 @@ public class ConnectionPool {
 
 	/**
 	 * 
-	 * 此函数返回一个数据库连接到连接池中，并把此连接置为空闲。
-	 * 所有使用连接池获得的数据库连接均应在不使用此连接时返回它。
+	 * 此函数返回一个数据库连接到连接池中，并把此连接置为空闲。 所有使用连接池获得的数据库连接均应在不使用此连接时返回它。
+	 * 
 	 * @param 需返回到连接池中的连接对象
 	 */
-
 	public void returnConnection(Connection conn) {
 		// 确保连接池存在，如果连接没有创建（不存在），直接返回
 		if (connections == null) {
@@ -351,7 +353,6 @@ public class ConnectionPool {
 	/**
 	 * 刷新连接池中所有的连接对象
 	 */
-
 	public synchronized void refreshConnections() throws SQLException {
 		// 确保连接池己创新存在
 		if (connections == null) {
@@ -377,7 +378,6 @@ public class ConnectionPool {
 	/**
 	 * 关闭连接池中所有的连接，并清空连接池。
 	 */
-
 	public synchronized void closeConnectionPool() throws SQLException {
 		// 确保连接池存在，如果不存在，返回
 		if (connections == null) {
@@ -406,9 +406,9 @@ public class ConnectionPool {
 
 	/**
 	 * 关闭一个数据库连接
+	 * 
 	 * @param 需要关闭的数据库连接
 	 */
-
 	private void closeConnection(Connection conn) {
 		try {
 			conn.close();
@@ -419,27 +419,24 @@ public class ConnectionPool {
 
 	/**
 	 * 使程序等待给定的毫秒数
+	 * 
 	 * @param 给定的毫秒数
 	 */
-
 	private void wait(int mSeconds) {
 		try {
 			Thread.sleep(mSeconds);
 		} catch (InterruptedException e) {
 		}
-
 	}
 
 	/**
-	 * 内部使用的用于保存连接池中连接对象的类
-	 * 此类中有两个成员，一个是数据库的连接，另一个是指示此连接是否
-	 * 正在使用的标志。
+	 * 内部使用的用于保存连接池中连接对象的类 此类中有两个成员，一个是数据库的连接，另一个是指示此连接是否 正在使用的标志。
 	 */
-
 	class PooledConnection {
 		Connection connection = null;// 数据库连接
 		boolean busy = false; // 此连接是否正在使用的标志，默认没有正在使用
 		// 构造函数，根据一个 Connection 构告一个 PooledConnection 对象
+
 		public PooledConnection(Connection connection) {
 			this.connection = connection;
 		}

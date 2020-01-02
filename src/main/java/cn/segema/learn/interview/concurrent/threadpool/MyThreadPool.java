@@ -1,9 +1,9 @@
-package cn.segema.learn.interview.concurrent.mythreadpool;
+package cn.segema.learn.interview.concurrent.threadpool;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class ThreadPool {
+public class MyThreadPool {
 	 // 线程池中默认线程的个数为5  
     private static int worker_num = 5;  
     // 工作线程  
@@ -12,16 +12,16 @@ public class ThreadPool {
     private static volatile int finished_task = 0;  
     // 任务队列，作为一个缓冲,List线程不安全  
     private List<Runnable> taskQueue = new LinkedList<Runnable>();  
-    private static ThreadPool threadPool;  
+    private static MyThreadPool threadPool;  
   
     // 创建具有默认线程个数的线程池  
-    private ThreadPool() {  
+    private MyThreadPool() {  
         this(5);  
     }  
   
     // 创建线程池,worker_num为线程池中工作线程的个数  
-    private ThreadPool(int worker_num) {  
-        ThreadPool.worker_num = worker_num;  
+    private MyThreadPool(int worker_num) {  
+        MyThreadPool.worker_num = worker_num;  
         workThrads = new WorkThread[worker_num];  
         for (int i = 0; i < worker_num; i++) {  
             workThrads[i] = new WorkThread();  
@@ -30,17 +30,17 @@ public class ThreadPool {
     }  
   
     // 单态模式，获得一个默认线程个数的线程池  
-    public static ThreadPool getThreadPool() {  
-        return getThreadPool(ThreadPool.worker_num);  
+    public static MyThreadPool getThreadPool() {  
+        return getThreadPool(MyThreadPool.worker_num);  
     }  
   
     // 单态模式，获得一个指定线程个数的线程池,worker_num(>0)为线程池中工作线程的个数  
     // worker_num<=0创建默认的工作线程个数  
-    public static ThreadPool getThreadPool(int worker_num1) {  
+    public static MyThreadPool getThreadPool(int worker_num1) {  
         if (worker_num1 <= 0)  
-            worker_num1 = ThreadPool.worker_num;  
+            worker_num1 = MyThreadPool.worker_num;  
         if (threadPool == null)  
-            threadPool = new ThreadPool(worker_num1);  
+            threadPool = new MyThreadPool(worker_num1);  
         return threadPool;  
     }  
   

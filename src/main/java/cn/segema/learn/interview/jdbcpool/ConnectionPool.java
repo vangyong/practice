@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.connpool;
+package cn.segema.learn.interview.jdbcpool;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,32 +7,21 @@ import java.sql.Statement;
 
 /**
  * 连接类
- *
- * @author Administrator
  */
-public class PoolConnection {
+public class ConnectionPool {
 
-	/**
-	 * 数据库连接
-	 */
+	//数据库连接
 	private Connection conn = null;
 
-	/**
-	 * 标记该连接是否使用
-	 */
+	//标记该连接是否使用
 	private boolean isUse = false;
 
-	/*
-	 * 构造方法
-	 */
-	public PoolConnection(Connection conn, boolean isUse) {
+	public ConnectionPool(Connection conn, boolean isUse) {
 		this.conn = conn;
 		this.isUse = isUse;
 	}
 
-	/**
-	 * 查询实现
-	 */
+	//查询实现
 	public ResultSet queryBySql(String sql) {
 		Statement sm = null;
 		ResultSet rs = null;
@@ -63,9 +52,6 @@ public class PoolConnection {
 		isUse = use;
 	}
 
-	/**
-	 * 将该连接置为可用状态
-	 */
 	public void close() {
 		this.isUse = false;
 	}

@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.connpool;
+package cn.segema.learn.interview.jdbcpool;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.CountDownLatch;
 
-public class JdbcNoPoolTestDemo {
+public class JdbcNoPoolDemo {
 	static final int threadSize = 2000;
     static JdbcPool jdbcPool = PoolManager.getInstance();
     static CountDownLatch countDownLatch1 = new CountDownLatch(1);

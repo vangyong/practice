@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.connpool;
+package cn.segema.learn.interview.jdbcpool;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +25,7 @@ public class JdbcPool implements IPool {
 
 	private static Integer incrementCount;
 
-	private static Vector<PoolConnection> connections = new Vector<>();
+	private static Vector<ConnectionPool> connections = new Vector<>();
 
 	/**
 	 * 通过实例初始化块来初始化
@@ -72,7 +72,7 @@ public class JdbcPool implements IPool {
 	 * 获取可用连接
 	 */
 	@Override
-	public PoolConnection getConnection() {
+	public ConnectionPool getConnection() {
 		if (connections.isEmpty()) {
 			System.out.println("连接池中没有连接");
 			throw new RuntimeException("连接池中没有连接");
@@ -83,12 +83,12 @@ public class JdbcPool implements IPool {
 	/**
 	 * 同步方法来获取连接池中可用连接，在多线程情况下，只有一个线程访问该方法来获取连接，防止由于多线程情况下多个线程获取同一个连接从而引起出错
 	 */
-	private synchronized PoolConnection getActiveConnection() {
+	private synchronized ConnectionPool getActiveConnection() {
 		/*
 		 * 通过循环来获取可用连接，若获取不到可用连接，则依靠无限循环来继续获取
 		 */
 		while (true) {
-			for (PoolConnection con : connections) {
+			for (ConnectionPool con : connections) {
 				if (!con.isUse()) {
 					Connection trueConn = con.getConn();
 					try {
@@ -128,7 +128,7 @@ public class JdbcPool implements IPool {
 				/*
 				 * 将连接放入连接池中，并将状态设为可用
 				 */
-				connections.add(new PoolConnection(connection, false));
+				connections.add(new ConnectionPool(connection, false));
 
 			} catch (SQLException e) {
 				e.printStackTrace();

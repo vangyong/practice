@@ -1,10 +1,10 @@
-package cn.segema.learn.interview.connpool;
+package cn.segema.learn.interview.jdbcpool;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.CountDownLatch;
 
-public class JdbcPoolTestDemo {
+public class JdbcPoolDemo {
 
 	static final int threadSize = 100;
 
@@ -18,7 +18,7 @@ public class JdbcPoolTestDemo {
     }
 
     public static void select() throws SQLException {
-        PoolConnection conn = jdbcPool.getConnection();
+        ConnectionPool conn = jdbcPool.getConnection();
 
         ResultSet rs = conn.queryBySql("select * from DNS_LOG");
         try {

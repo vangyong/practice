@@ -3,7 +3,7 @@ package cn.segema.learn.interview.concurrent.threadpool;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class SingleThreadDemo {
+public class SingleThreadExecutorDemo {
 
 	public static void main(String[] args) {
 		ExecutorService threadPool = Executors.newSingleThreadExecutor();
@@ -19,7 +19,8 @@ public class SingleThreadDemo {
 						} catch (InterruptedException e) {
 							e.printStackTrace();
 						}
-						System.out.println(Thread.currentThread().getName() + " looping of " + j + " for task of " + task);
+						System.out.println(
+								Thread.currentThread().getName() + " looping of " + j + " for task of " + task);
 					}
 				}
 			});

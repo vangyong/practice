@@ -1,17 +1,19 @@
 package cn.segema.learn.interview.base;
 
-public class AccountDomain{
+public class AccountDomain {
 
 	private String accountID;
 	private String name;
 	private double balance;
 	private static double minorBalance = 10.0;
 
+	public AccountDomain() {
+	}
+
 	public AccountDomain(String accountID, String name, double balance) {
 		this.accountID = accountID;
 		this.name = name;
 		this.balance = balance;
-
 	}
 
 	// 取款
@@ -80,6 +82,4 @@ public class AccountDomain{
 		AccountDomain.minorBalance = minorBalance;
 	}
 
-	
-	
 }

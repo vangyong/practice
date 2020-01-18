@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.base;
+package cn.segema.learn.interview.concurrent.threadpool;
 
 import java.util.concurrent.*;
 import java.util.Date;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * 有返回值的线程
  */
-public class ThreadCallableDemo {
+public class ThreadPoolCallableDemo {
 	public static void main(String[] args) throws ExecutionException, InterruptedException {
 		System.out.println("----程序开始运行----");
 		Date date1 = new Date();
@@ -19,7 +19,7 @@ public class ThreadCallableDemo {
 		// 创建多个有返回值的任务
 		List<Future> list = new ArrayList<Future>();
 		for (int i = 0; i < taskSize; i++) {
-			Callable c = new MyCallable(i + " ");
+			Callable c = new MyThreadPoolCallable(i + " ");
 			// 执行任务并获取Future对象
 			Future f = pool.submit(c);
 			// System.out.println(">>>" + f.get().toString());
@@ -39,11 +39,11 @@ public class ThreadCallableDemo {
 	}
 }
 
-class MyCallable implements Callable<Object> {
+class MyThreadPoolCallable implements Callable<Object> {
 
 	private String taskNum;
 
-	MyCallable(String taskNum) {
+	MyThreadPoolCallable(String taskNum) {
 		this.taskNum = taskNum;
 	}
 

@@ -34,7 +34,5 @@ public class ParamTransferDemo {
 		int num = 5;
 		addNum(num);
 		System.err.println(num);
-
 	}
-
 }

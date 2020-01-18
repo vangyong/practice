@@ -2,19 +2,25 @@ package cn.segema.learn.interview.concurrent.threadpool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class ThreadPoolExecutorDemo {
 	public static void main(String[] args) {
+		// 创建线程池
+		ExecutorService threadPool = Executors.newFixedThreadPool(10);
 
-		ExecutorService fixedExecutorService = Executors.newFixedThreadPool(1);
-		ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) fixedExecutorService;
-		System.out.println(threadPoolExecutor.getMaximumPoolSize());
-		threadPoolExecutor.setCorePoolSize(8);
-
-		ExecutorService singleExecutorService = Executors.newSingleThreadExecutor();
-		// 运行时异常 java.lang.ClassCastException
-		// ThreadPoolExecutor threadPoolExecutor2 = (ThreadPoolExecutor)
-		// singleExecutorService;
+		while (true) {
+			// 提交多个线程任务，并执行
+			threadPool.execute(new Runnable() {
+				@Override
+				public void run() {
+					System.out.println(Thread.currentThread().getName() + " is running ..");
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			});
+		}
 	}
 }

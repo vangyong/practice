@@ -21,8 +21,8 @@ class MyCallable implements Callable<Integer> {
 
 	@Override
 	public Integer call() throws Exception {
-		System.out.println("MyCallable:" +Thread.currentThread().getName() + "\t" + Thread.currentThread().getId() + "\t" + new Date()
-				+ " \tstarting...");
+		System.out.println("MyCallable:" + Thread.currentThread().getName() + "\t" + Thread.currentThread().getId()
+				+ "\t" + new Date() + " \tstarting...");
 
 		int sum = 0;
 		for (int i = 0; i <= 100000; i++) {

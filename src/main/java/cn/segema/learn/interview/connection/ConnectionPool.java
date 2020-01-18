@@ -6,11 +6,7 @@ import java.util.LinkedList;
 public class ConnectionPool {
 	private LinkedList<Connection> pool = new LinkedList<Connection>();
 
-	/**
-	 * 初始化连接池的大小
-	 * 
-	 * @param initialSize
-	 */
+	//初始化连接池的大小
 	public ConnectionPool(int initialSize) {
 		if (initialSize > 0) {
 			for (int i = 0; i < initialSize; i++) {
@@ -19,11 +15,7 @@ public class ConnectionPool {
 		}
 	}
 
-	/**
-	 * 释放连接，放回到连接池
-	 * 
-	 * @param connection
-	 */
+	//释放连接，放回到连接池
 	public void releaseConnection(Connection connection) {
 		if (connection != null) {
 			synchronized (pool) {
@@ -34,13 +26,7 @@ public class ConnectionPool {
 		}
 	}
 
-	/**
-	 * 在mills内无法获取到连接，将会返回null
-	 * 
-	 * @param mills
-	 * @return
-	 * @throws InterruptedException
-	 */
+	//在mills内无法获取到连接，将会返回null
 	public Connection fetchConnection(long mills) throws InterruptedException {
 		synchronized (pool) {
 			// 无限制等待
@@ -65,4 +51,5 @@ public class ConnectionPool {
 			}
 		}
 	}
+	
 }

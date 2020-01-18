@@ -3,7 +3,7 @@ package cn.segema.learn.interview.base;
 public class ParentDomain {
 
 	public ParentDomain(String name) {
-		this.name=name;
+		this.name = name;
 	}
 
 	public String name;

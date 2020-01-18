@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.base;
+package cn.segema.learn.interview.thread;
 
 public class ThreadWaitNotifyDemo {
 	private int start = 1;

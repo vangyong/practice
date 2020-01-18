@@ -11,6 +11,7 @@ import java.util.Vector;
 
 /**
  * 出自:https://blog.csdn.net/shine4j/article/details/38487443
+ * 
  * @author wangyong
  */
 public class ConnectionPool {
@@ -30,13 +31,13 @@ public class ConnectionPool {
 	 * 构造函数
 	 * 
 	 * @param jdbcDriver
-	 *            String JDBC 驱动类串
+	 *            JDBC 驱动类串
 	 * @param dbUrl
-	 *            String 数据库 URL
+	 *            数据库 URL
 	 * @param dbUsername
-	 *            String 连接数据库用户名
+	 *            连接数据库用户名
 	 * @param dbPassword
-	 *            String 连接数据库用户的密码
+	 *            连接数据库用户的密码
 	 */
 
 	public ConnectionPool(String jdbcDriver, String dbUrl, String dbUsername, String dbPassword) {
@@ -152,7 +153,6 @@ public class ConnectionPool {
 	 * 
 	 * @param numConnections
 	 *            要创建的数据库连接的数目
-	 * 
 	 */
 	private void createConnections(int numConnections) throws SQLException {
 		// 循环创建指定数目的数据库连接
@@ -256,7 +256,6 @@ public class ConnectionPool {
 
 	/**
 	 * 查找连接池中所有的连接，查找一个可用的数据库连接， 如果没有可用的连接，返回 null
-	 * 
 	 * @return 返回一个可用的数据库连接
 	 */
 
@@ -295,9 +294,8 @@ public class ConnectionPool {
 	/**
 	 * 测试一个连接是否可用，如果不可用，关掉它并返回 false 否则可用返回 true
 	 * 
-	 * @param conn
-	 *            需要测试的数据库连接
-	 * @return 返回 true 表示此连接可用， false 表示不可用
+	 * @param conn 需要测试的数据库连接
+	 * @return true 表示此连接可用， false 表示不可用
 	 * 
 	 */
 	private boolean testConnection(Connection conn) {
@@ -323,8 +321,8 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 
-	 * 此函数返回一个数据库连接到连接池中，并把此连接置为空闲。 所有使用连接池获得的数据库连接均应在不使用此连接时返回它。
+	 * 归还连接
+	 * 返回一个数据库连接到连接池中，并把此连接置为空闲。 所有使用连接池获得的数据库连接均应在不使用此连接时返回它。
 	 * 
 	 * @param 需返回到连接池中的连接对象
 	 */
@@ -338,7 +336,6 @@ public class ConnectionPool {
 		PooledConnection pConn = null;
 		Enumeration enumerate = connections.elements();
 		// 遍历连接池中的所有连接，找到这个要返回的连接对象
-
 		while (enumerate.hasMoreElements()) {
 			pConn = (PooledConnection) enumerate.nextElement();
 			// 先找到连接池中的要返回的连接对象
@@ -406,8 +403,7 @@ public class ConnectionPool {
 
 	/**
 	 * 关闭一个数据库连接
-	 * 
-	 * @param 需要关闭的数据库连接
+	 * @param 关闭数据库连接
 	 */
 	private void closeConnection(Connection conn) {
 		try {
@@ -419,8 +415,7 @@ public class ConnectionPool {
 
 	/**
 	 * 使程序等待给定的毫秒数
-	 * 
-	 * @param 给定的毫秒数
+	 * @param 毫秒数
 	 */
 	private void wait(int mSeconds) {
 		try {
@@ -430,33 +425,28 @@ public class ConnectionPool {
 	}
 
 	/**
-	 * 内部使用的用于保存连接池中连接对象的类 此类中有两个成员，一个是数据库的连接，另一个是指示此连接是否 正在使用的标志。
+	 * 内部使用的用于保存连接池中连接对象的类
 	 */
 	class PooledConnection {
 		Connection connection = null;// 数据库连接
 		boolean busy = false; // 此连接是否正在使用的标志，默认没有正在使用
-		// 构造函数，根据一个 Connection 构告一个 PooledConnection 对象
 
 		public PooledConnection(Connection connection) {
 			this.connection = connection;
 		}
 
-		// 返回此对象中的连接
 		public Connection getConnection() {
 			return connection;
 		}
 
-		// 设置此对象的，连接
 		public void setConnection(Connection connection) {
 			this.connection = connection;
 		}
 
-		// 获得对象连接是否忙
 		public boolean isBusy() {
 			return busy;
 		}
-
-		// 设置对象的连接正在忙
+		
 		public void setBusy(boolean busy) {
 			this.busy = busy;
 		}

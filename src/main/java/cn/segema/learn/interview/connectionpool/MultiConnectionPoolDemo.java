@@ -1,12 +1,18 @@
-package cn.segema.learn.interview.connection;
+package cn.segema.learn.interview.connectionpool;
 
 import java.sql.Connection;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ConnectionPoolDemo {
+public class MultiConnectionPoolDemo {
 
-	static ConnectionPool pool = new ConnectionPool(10);
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	static final String DB_URL = "jdbc:mysql://localhost:3306/mytest";
+	// 数据库的用户名与密码
+	static final String USER = "root";
+	static final String PASS = "root";
+
+	static ConnectionPool pool = new ConnectionPool(JDBC_DRIVER, DB_URL, USER, PASS);
 	// 保证所有ConnectionRunner能够同时开始
 	static CountDownLatch start = new CountDownLatch(1);
 	// main线程将会等待所有ConnectionRunner结束后才能继续执行
@@ -56,13 +62,13 @@ public class ConnectionPoolDemo {
 				try {
 					// 从线程池中获取连接，如果1000ms内无法获取到，将会返回null
 					// 分别统计连接获取的数量got和未获取到的数量notGot
-					Connection connection = pool.fetchConnection(1);
+					Connection connection = pool.getConnection();
 					if (connection != null) {
 						try {
 							connection.createStatement();
 							connection.commit();
 						} finally {
-							pool.releaseConnection(connection);
+							pool.returnConnection(connection);
 							got.incrementAndGet();
 						}
 					} else {

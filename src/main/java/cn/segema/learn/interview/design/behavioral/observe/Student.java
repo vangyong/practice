@@ -1,7 +1,7 @@
 package cn.segema.learn.interview.design.behavioral.observe;
 
 public class Student implements Observer {
-	
+
 	private String name;
 
 	@Override

@@ -14,8 +14,8 @@ public class Teacher implements Observable {
 
 	@Override
 	public void registerObserver(Observer observer) {
-		 //向集合中添加观察者
-	    mObserverList.add(observer);
+		// 向集合中添加观察者
+		mObserverList.add(observer);
 
 	}
 
@@ -26,10 +26,10 @@ public class Teacher implements Observable {
 
 	@Override
 	public void notifyObservers(String message) {
-		 //遍历集合通知所有的观察者，自身数据变化了
-	    for (Observer observer : mObserverList) {
-	      observer.update(message);
-	    }
+		// 遍历集合通知所有的观察者，自身数据变化了
+		for (Observer observer : mObserverList) {
+			observer.update(message);
+		}
 
 	}
 

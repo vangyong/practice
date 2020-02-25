@@ -5,10 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * 连接类
- */
-public class ConnectionPool {
+public class JdbcConnection {
 
 	//数据库连接
 	private Connection conn = null;
@@ -16,7 +13,7 @@ public class ConnectionPool {
 	//标记该连接是否使用
 	private boolean isUse = false;
 
-	public ConnectionPool(Connection conn, boolean isUse) {
+	public JdbcConnection(Connection conn, boolean isUse) {
 		this.conn = conn;
 		this.isUse = isUse;
 	}
@@ -32,7 +29,6 @@ public class ConnectionPool {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 		return rs;
 	}
 

@@ -1,13 +1,10 @@
-package cn.segema.learn.interview.io.bio.socket;
+package cn.segema.learn.interview.io.bio.clients;
 
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 
-/**
- * Created by zhaozhou on 2018/9/28.
- */
-public class SocketOptionTest {
+public class SocketOptionClientDemo {
 
     public static void socketOption(){
         Socket socket = null;
@@ -40,7 +37,7 @@ public class SocketOptionTest {
 
 
     public static void main(String[]  args){
-        SocketOptionTest.socketOption();
+        SocketOptionClientDemo.socketOption();
     }
 
 }

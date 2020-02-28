@@ -1,41 +1,39 @@
-package cn.segema.learn.interview.io.bio.serversocket;
+package cn.segema.learn.interview.io.bio.servers;
 
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketAddress;
 
-import cn.segema.learn.interview.io.bio.socket.EchoServer;
+import cn.segema.learn.interview.io.bio.servers.HandlerServerDemo.HandlerServer;
 
-public class EchoServerWithMultiThread {
-
-	static final int PORT = 9999;
-
-	public static void start() {
+public class SocketOptionServerDemo {
+	public static void main(String[] args) {
 		try {
-			ServerSocket serverSocket = new ServerSocket(PORT);
-			System.out.println("server listen on port:" + PORT);
+			ServerSocket serverSocket = new ServerSocket();
+			serverSocket.setReuseAddress(true);
+			serverSocket.setSoTimeout(1000);
+			SocketAddress address = new InetSocketAddress("127.0.0.1", 9999);
+			serverSocket.bind(address);
 			while (true) {
 				try {
 					Socket client = serverSocket.accept();
 					System.out.println("receive client connect, localPort=" + client.getPort());
-					new Thread(new EchoServer.HandlerServer(client)).start();
+					new Thread(new Handler(client)).start();
 				} catch (Exception e) {
 					System.out.println("client exception,e=" + e.getMessage());
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("server exception,e=" + e.getMessage());
+			e.printStackTrace();
 		}
 	}
-
-	public static void main(String[] args) {
-		EchoServer.start();
-	}
-
-	public static class HandlerServer implements Runnable {
+	
+	public static class Handler implements Runnable {
 
 		private Socket client;
 
-		public HandlerServer(Socket client) {
+		public Handler(Socket client) {
 			this.client = client;
 		}
 

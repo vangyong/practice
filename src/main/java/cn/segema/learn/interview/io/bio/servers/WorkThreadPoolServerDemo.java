@@ -1,10 +1,10 @@
-package cn.segema.learn.interview.io.bio.serversocket;
+package cn.segema.learn.interview.io.bio.servers;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.LinkedList;
 
-public class EchoServerWithThreadPool extends ThreadGroup {
+public class WorkThreadPoolServerDemo extends ThreadGroup {
 
 	final private static int PORT = 9999;
 
@@ -13,8 +13,8 @@ public class EchoServerWithThreadPool extends ThreadGroup {
 	private boolean isClose = false;
 	private static int threadPoolID;
 
-	public EchoServerWithThreadPool(int poolSize) {
-		super("EchoServerWithThreadPool-" + (threadPoolID++));
+	public WorkThreadPoolServerDemo(int poolSize) {
+		super("WorkQueueServerDemo-" + (threadPoolID++));
 		setDaemon(true);
 		workQueue = new LinkedList<Runnable>();
 		for (int i = 0; i < poolSize; i++) {
@@ -66,11 +66,12 @@ public class EchoServerWithThreadPool extends ThreadGroup {
 	}
 
 	public static void main(String[] args) {
-		EchoServerWithThreadPool threadPool = null;
+		WorkThreadPoolServerDemo threadPool = null;
 		try {
-			threadPool = new EchoServerWithThreadPool(10);
+			threadPool = new WorkThreadPoolServerDemo(10);
 			ServerSocket serverSocket = new ServerSocket(PORT);
 			System.out.println("server listen on port:" + PORT);
+			System.out.println("main thread:"+Thread.currentThread().getName());
 			while (true) {
 				Socket client = serverSocket.accept();
 				System.out.println("receive client connect, localPort=" + client.getPort());
@@ -104,6 +105,7 @@ public class EchoServerWithThreadPool extends ThreadGroup {
 				while (true) {
 					int cnt = this.client.getInputStream().read(buf, 0, 1023);
 					if (cnt > 0) {
+						System.out.println("handler thread:"+Thread.currentThread().getName());
 						System.out.println("receive msg from client:" + new String(buf));
 						this.client.getOutputStream().write(buf, 0, cnt);
 					}
@@ -127,7 +129,7 @@ public class EchoServerWithThreadPool extends ThreadGroup {
 	 */
 	private class WorkThread extends Thread {
 		public WorkThread() {
-			super(EchoServerWithThreadPool.this, "WorkThread-" + (threadID++));
+			super(WorkThreadPoolServerDemo.this, "WorkThread-" + (threadID++));
 		}
 
 		@Override

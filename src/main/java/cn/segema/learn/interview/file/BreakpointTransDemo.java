@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.io;
+package cn.segema.learn.interview.file;
 
 import java.io.File;
 import java.io.IOException;

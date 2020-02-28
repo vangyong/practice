@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.io.bio.socket;
+package cn.segema.learn.interview.io.bio.clients;
 
 import java.io.IOException;
 import java.net.*;
@@ -6,7 +6,7 @@ import java.net.*;
 /**
  * Created by zhaozhou on 2018/9/28.
  */
-public class ExceptionTest {
+public class ExceptionClientDemo {
 
     public static void UnknownHostExceptionTest(){
         try {
@@ -51,9 +51,9 @@ public class ExceptionTest {
 
 
     public static void main(String[] args){
-        ExceptionTest.UnknownHostExceptionTest();
-        ExceptionTest.ConnectExceptionTest();
-        ExceptionTest.SocketTimeoutExceptionTest();
-        ExceptionTest.BindExceptionTest();
+        ExceptionClientDemo.UnknownHostExceptionTest();
+        ExceptionClientDemo.ConnectExceptionTest();
+        ExceptionClientDemo.SocketTimeoutExceptionTest();
+        ExceptionClientDemo.BindExceptionTest();
     }
 }

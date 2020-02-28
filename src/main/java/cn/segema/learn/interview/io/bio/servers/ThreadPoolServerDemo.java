@@ -1,11 +1,11 @@
-package cn.segema.learn.interview.io.bio.serversocket;
+package cn.segema.learn.interview.io.bio.servers;
 
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class EchoServerWithJdkPool {
+public class ThreadPoolServerDemo {
 	private final static int PORT = 9999;
 	private final static int THREAD_IN_EACH_PROCESSOR = 2;
 
@@ -19,7 +19,7 @@ public class EchoServerWithJdkPool {
 			while (true) {
 				Socket client = server.accept();
 				System.out.println("receive client connect, localPort=" + client.getLocalPort());
-				ClientHandler handler = new ClientHandler(client);
+				Handler handler = new Handler(client);
 				executor.submit(handler);
 			}
 		} catch (Exception e) {
@@ -32,11 +32,11 @@ public class EchoServerWithJdkPool {
 	/**
 	 * 客户端读写处理任务
 	 */
-	private static class ClientHandler implements Runnable {
+	private static class Handler implements Runnable {
 
 		private Socket client;
 
-		public ClientHandler(Socket client) {
+		public Handler(Socket client) {
 			this.client = client;
 		}
 

@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 /**
  * 多工作线程的reactor模式
  */
-public class MultiWorkerThreadReactorServer {
+public class MultiWorkerThreadReactorServerDemo {
 
 	private final static int PROCESS_NUM = 10;
 
@@ -28,7 +28,7 @@ public class MultiWorkerThreadReactorServer {
 
 			// 注册accept事件
 			serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT,
-					new BasicReactorServer.Acceptor(selector, serverSocketChannel));
+					new BasicReactorServerDemo.Acceptor(selector, serverSocketChannel));
 
 			DispatchHandler[] handlers = new DispatchHandler[PROCESS_NUM];
 			for (DispatchHandler h : handlers) {
@@ -134,7 +134,7 @@ public class MultiWorkerThreadReactorServer {
 	}
 
 	public static void main(String[] args) {
-		BasicReactorServer.start(9999);
+		BasicReactorServerDemo.start(9999);
 	}
 
 }

@@ -8,13 +8,11 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 /**
- * 多reactor的reactor模式
+ * 基本的reactor模式
  */
-public class MultiReactorReactorServer {
+public class BasicReactorServerDemo {
 
 	public static void start(int port) {
 		try {
@@ -25,8 +23,7 @@ public class MultiReactorReactorServer {
 			serverSocketChannel.bind(new InetSocketAddress(port), 128);
 
 			// 注册accept事件
-			serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT,
-					new BasicReactorServer.Acceptor(selector, serverSocketChannel));
+			serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT, new Acceptor(selector, serverSocketChannel));
 
 			// 阻塞等待就绪事件
 			while (selector.select() > 0) {
@@ -66,8 +63,7 @@ public class MultiReactorReactorServer {
 			try {
 				SocketChannel socketChannel = serverSocketChannel.accept();
 				socketChannel.configureBlocking(false);
-				socketChannel.register(selector, SelectionKey.OP_READ,
-						new BasicReactorServer.DispatchHandler(socketChannel));
+				socketChannel.register(selector, SelectionKey.OP_READ, new DispatchHandler(socketChannel));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -79,23 +75,9 @@ public class MultiReactorReactorServer {
 	 */
 	public static class DispatchHandler implements Runnable {
 
-		private static Executor executor = Executors
-				.newFixedThreadPool(Runtime.getRuntime().availableProcessors() << 1);
 		private SocketChannel socketChannel;
 
 		public DispatchHandler(SocketChannel socketChannel) {
-			this.socketChannel = socketChannel;
-		}
-
-		public void run() {
-			executor.execute(new ReaderHandler(socketChannel));
-		}
-	}
-
-	public static class ReaderHandler implements Runnable {
-		private SocketChannel socketChannel;
-
-		public ReaderHandler(SocketChannel socketChannel) {
 			this.socketChannel = socketChannel;
 		}
 
@@ -134,7 +116,6 @@ public class MultiReactorReactorServer {
 	}
 
 	public static void main(String[] args) {
-		BasicReactorServer.start(9999);
+		BasicReactorServerDemo.start(9999);
 	}
-
 }

@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.io.preactor;
+package cn.segema.learn.interview.io.proactor;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -10,7 +10,7 @@ import java.nio.channels.CompletionHandler;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 
-public class Preactor {
+public class ProactorServerDemo {
 
 	private final static int port = 9999;
 
@@ -32,9 +32,8 @@ public class Preactor {
 	}
 
 	public static void main(String[] args) {
-
 		try {
-			Preactor.start();
+			ProactorServerDemo.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -72,7 +71,7 @@ public class Preactor {
 				attachment.flip();
 				String msg = new String(attachment.array());
 				System.out.println("recv client msg:" + msg);
-				socketChannel.write(attachment, attachment, new WritterHandler(socketChannel));
+				socketChannel.write(attachment, attachment, new WriteHandler(socketChannel));
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -90,11 +89,11 @@ public class Preactor {
 		}
 	}
 
-	public static class WritterHandler implements CompletionHandler<Integer, ByteBuffer> {
+	public static class WriteHandler implements CompletionHandler<Integer, ByteBuffer> {
 
 		private AsynchronousSocketChannel socketChannel;
 
-		public WritterHandler(AsynchronousSocketChannel socketChannel) {
+		public WriteHandler(AsynchronousSocketChannel socketChannel) {
 			this.socketChannel = socketChannel;
 		}
 

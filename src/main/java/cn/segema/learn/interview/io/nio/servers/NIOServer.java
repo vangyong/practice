@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.nio;
+package cn.segema.learn.interview.io.nio.servers;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

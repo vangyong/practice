@@ -1,15 +1,15 @@
-package cn.segema.learn.interview.io;
+package cn.segema.learn.interview.io.bio.servers;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class IOServer {
+public class ThreadServerDemo {
 
 	public static void main(String[] args) throws Exception {
 
-		ServerSocket serverSocket = new ServerSocket(8000);
+		ServerSocket serverSocket = new ServerSocket(9999);
 
 		// (1) 接收新连接线程
 		new Thread(() -> {

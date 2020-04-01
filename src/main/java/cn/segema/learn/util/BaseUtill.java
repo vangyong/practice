@@ -3,7 +3,7 @@ package cn.segema.learn.util;
 /**
  * 进制转换工具
  */
-public final class HexTool {
+public final class BaseUtill {
 
 	// 默认进制进制表
 	private static final char[] HEX_TABLE = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -160,7 +160,7 @@ public final class HexTool {
 	
 	
 	public static void main(String[] args) {
-		System.out.println(HexTool.anyToAny("110",2,16));
+		System.out.println(BaseUtill.anyToAny("110",2,16));
 		
 		
 	}

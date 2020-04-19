@@ -8,6 +8,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 public class MybatisTest {
 
 	StudentDao dao;
@@ -80,6 +84,18 @@ public class MybatisTest {
 	@Test
 	public void test08() {
 		List<Student> students = dao.selectByName("张");
+		for (Student student : students) {
+			System.out.println(student);
+		}
+	}
+
+	@Test
+	public void test09() {
+		List<Student> students;
+		PageInfo<Student> pageInfo;
+		Page<Object> page = PageHelper.startPage(1,20);
+		students = dao.selectByName("张");
+		pageInfo = new PageInfo<>(students);
 		for (Student student : students) {
 			System.out.println(student);
 		}

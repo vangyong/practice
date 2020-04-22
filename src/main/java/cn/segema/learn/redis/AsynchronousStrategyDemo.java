@@ -1,5 +1,7 @@
 package cn.segema.learn.redis;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -20,26 +22,25 @@ public class AsynchronousStrategyDemo {
 		
 		Jedis jedis = new Jedis("127.0.0.1");
 		jedis.auth("123456");
-
-		String v = jedis.get(key);
-		String value = v.getValue();
-		long timeout = v.getTimeout();
-		if (v.timeout <= System.currentTimeMillis()) {
+		
+		String value = jedis.hget(key,"value");
+		String timeoutStr = jedis.hget(key,"timeout");
+		long timeout = Long.valueOf(timeoutStr==null? "0": timeoutStr);
+		if (timeout <= System.currentTimeMillis()) {
 			// 异步更新后台异常执行
 			threadPool.execute(new Runnable() {
 				public void run() {
-					String keyMutex = "mutex:" + key;
+					String keyMutex = "mutex_" + key;
 					if (jedis.setnx(keyMutex, "1") != null) {
-						// 3 min timeout to avoid mutex holder crash
 						jedis.expire(keyMutex, 3 * 60);
 						String dbValue = getFromDB(key);
-						jedis.set(key, dbValue);
+						jedis.hset(key, "value", dbValue);
+						jedis.hset(key, "timeout",String.valueOf(60+System.currentTimeMillis()));
 						jedis.del(keyMutex);
 					}
 				}
 			});
 		}
-
 	}
 	
 	public static String getFromDB(String key) {

@@ -10,9 +10,17 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- <dependency> <groupId>org.codehaus.jackson</groupId> <artifactId>jackson-core-asl</artifactId> 
-			<version>1.9.13</version> </dependency> <dependency> <groupId>org.codehaus.jackson</groupId> 
-			<artifactId>jackson-mapper-asl</artifactId> <version>1.9.13</version> </dependency> -->
+		<!-- jackson -->
+		<!-- <dependency> 
+			<groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-core-asl</artifactId> 
+			<version>1.9.13</version> 
+		</dependency> 
+		<dependency> 
+			<groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-mapper-asl</artifactId> 
+			<version>1.9.13</version> 
+		</dependency> -->
 		
 		
 		<!-- aspectjweaver -->
@@ -65,12 +73,12 @@
 		    <version>5.2.2.RELEASE</version>
 		</dependency>
 
+		<!-- cglib -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>3.3.0</version>
 		</dependency>
-
 
 		<!-- storm -->
 		<dependency>
@@ -112,12 +120,14 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- netty -->
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>4.1.31.Final</version>
 		</dependency>
 
+		<!-- reactor -->
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-core</artifactId>
@@ -131,28 +141,40 @@
 			<version>2.5.0</version>
 		</dependency>
 
-		<!-- <dependency> <groupId>io.nats</groupId> <artifactId>java-nats-streaming</artifactId> 
-			<version>2.1.6</version> </dependency> -->
-
+		<!-- nats-streaming -->
+		<!-- <dependency> 
+			<groupId>io.nats</groupId> 
+			<artifactId>java-nats-streaming</artifactId> 
+			<version>2.1.6</version> 
+		</dependency> -->
 
 		<!-- elasticsearch -->
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
-			<version>6.8.0</version>
+			<version>6.8.3</version>
 		</dependency>
+		
+		<!-- elasticsearch-rest-client -->
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>elasticsearch-rest-client</artifactId>
-			<version>6.8.0</version>
+			<version>6.8.3</version>
+		</dependency>
+		
+		<!-- elasticsearch-rest-high-level-client -->
+		<dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>elasticsearch-rest-high-level-client</artifactId>
+		    <version>6.8.3</version>
 		</dependency>
 
+		<!-- fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.58</version>
 		</dependency>
-
 
 		<!-- rocksdb -->
 		<dependency>
@@ -174,25 +196,26 @@
 			<version>3.0.1</version>
 		</dependency>
 		
+		<!-- redisson -->
 		<!-- <dependency>
 		    <groupId>org.redisson</groupId>
 		    <artifactId>redisson</artifactId>
 		    <version>3.12.5</version>
 		</dependency> -->
 		
-
 		<!-- mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.5.2</version>
 		</dependency>
+		
+		<!-- pagehelper -->
 		<dependency>
 		    <groupId>com.github.pagehelper</groupId>
 		    <artifactId>pagehelper</artifactId>
 		    <version>5.1.11</version>
 		</dependency>
-		
 		
 		<!-- mybatis-spring -->
 		<dependency>
@@ -202,8 +225,12 @@
 		</dependency>
 
 		<!-- spring-test -->
-		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-test</artifactId> 
-			<version>5.1.8.RELEASE</version> <scope>test</scope> </dependency> -->
+		<dependency> 
+			<groupId>org.springframework</groupId> 
+			<artifactId>spring-test</artifactId> 
+			<version>5.1.8.RELEASE</version>
+			<scope>test</scope> 
+		</dependency>
 
 		<!-- junit -->
 		<dependency>
@@ -248,26 +275,19 @@
 			<version>5.1.9.RELEASE</version>
 		</dependency> -->
 		
-		<!-- zookeeper依赖 -->
+		<!-- zookeeper -->
 		<dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>3.5.6</version>
         </dependency>
 		
-		<!-- hadoop依赖 -->
+		<!-- hadoop -->
 		<dependency>
 		    <groupId>org.apache.hadoop</groupId>
 		    <artifactId>hadoop-client</artifactId>
 		    <version>3.2.1</version>
 		</dependency>
-		
-		<!-- hbase-server -->
-<!-- 		<dependency>
-		    <groupId>org.apache.hbase</groupId>
-		    <artifactId>hbase-server</artifactId>
-		    <version>2.2.2</version>
-		</dependency> -->
 
 		<!-- hbase-client -->
 		<dependency>
@@ -301,6 +321,7 @@
            <artifactId>webmagic-extension</artifactId>
            <version>0.7.3</version>
         </dependency>
+        
         <!--布隆过滤器-->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -314,7 +335,7 @@
         </dependency>
 		
 		<!-- windows -->
-<!-- 		<dependency>
+		<!-- <dependency>
 		    <groupId>jdk.tools</groupId>
 		    <artifactId>jdk.tools</artifactId>
 		    <version>1.8</version>

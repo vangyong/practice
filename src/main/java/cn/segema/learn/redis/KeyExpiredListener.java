@@ -19,11 +19,11 @@ public class KeyExpiredListener extends JedisPubSub {
     @Override
     public void onPMessage(String pattern, String channel, String message) {
         System.out.println("onPMessage pattern " + pattern + " " + channel + " " + message);
-        JedisPool pool = new JedisPool("10.10.143.147", 6379);
-        Jedis jedis = pool.getResource();
-        jedis.auth("123456");
-        Object value = jedis.get(message);
-        System.out.println(value);
+//        JedisPool pool = new JedisPool("10.10.143.147", 6379);
+//        Jedis jedis = pool.getResource();
+//        jedis.auth("123456");
+//        Object value = jedis.get(message);
+//        System.out.println(value);
         
     }
 

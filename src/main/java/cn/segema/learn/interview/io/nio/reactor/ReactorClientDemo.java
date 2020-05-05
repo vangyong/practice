@@ -1,10 +1,10 @@
-package cn.segema.learn.interview.io.proactor;
+package cn.segema.learn.interview.io.nio.reactor;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Date;
 
-public class ProactorClientDemo {
+public class ReactorClientDemo {
 	public static void main(String[] args) {
 		new Thread(() -> {
 			try {

@@ -41,6 +41,7 @@ public class ReentrantLockDemo {
             System.out.println("线程B收到通知，开始执行自己的业务...");
             lock.unlock();
         });
+        
         threadB.start();
         try {
             Thread.sleep(1000);

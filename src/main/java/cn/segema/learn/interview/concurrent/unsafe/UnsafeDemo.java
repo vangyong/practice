@@ -1,13 +1,18 @@
 package cn.segema.learn.interview.concurrent.unsafe;
 
 import java.lang.reflect.Field;
-import sun.misc.Unsafe;
-import sun.reflect.Reflection;
 
+import sun.misc.Unsafe;
+
+/**
+ * 魔术类，可以直接操作内存
+ * @author wangyong
+ *
+ */
 public class UnsafeDemo {
 	public static void main(String[] args) throws NoSuchFieldException, SecurityException, IllegalArgumentException,
 			IllegalAccessException, InstantiationException {
-		// 通过反射得到theUnsafe对应的Field对象
+		// 只能通过反射得到theUnsafe对应的Field对象
 		Field field = Unsafe.class.getDeclaredField("theUnsafe");
 		// 设置该Field为可访问
 		field.setAccessible(true);

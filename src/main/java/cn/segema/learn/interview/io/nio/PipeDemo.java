@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Pipe;
 
+/**
+ * @description 管道pipe实例
+ * @author wangyong
+ * @createDate 2020/05/06
+ */
 public class PipeDemo {
 
 	public static void main(String[] args) throws IOException {
@@ -20,7 +25,11 @@ public class PipeDemo {
 		while (buf.hasRemaining()) {
 			sinkChannel.write(buf);
 		}
-
+		buf.flip();
+		int len = buf.limit() - buf.position();
+	    byte[] bytes = new byte[len];
+	    buf.get(bytes);
+		System.out.println(new String(bytes,"UTF-8"));
 	}
 
 }

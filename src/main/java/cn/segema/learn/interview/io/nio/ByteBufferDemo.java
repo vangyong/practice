@@ -11,9 +11,7 @@ public class ByteBufferDemo {
 		try {
 			RandomAccessFile aFile = new RandomAccessFile("/Users/wangyong/Downloads/nio-data.txt", "rw");
 			FileChannel inChannel = aFile.getChannel();
-			// create buffer with capacity of 48 bytes
 			ByteBuffer buf = ByteBuffer.allocate(48);
-			// read into buffer.
 			int bytesRead = inChannel.read(buf);
 			while (bytesRead != -1) {
 				buf.flip(); // make buffer ready for read

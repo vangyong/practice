@@ -7,13 +7,15 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+
 /**
- * @category 
+ * @description 一句话描述该类的功能
  * @author wangyong
+ * @createDate 2020/05/06
  * @see https://www.cnblogs.com/rocky-fang/p/9030438.html
  */
-
 public class ZookeeperConnectionDemo implements Watcher {
+    
 	private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
 	public void process(WatchedEvent event) {
@@ -22,7 +24,7 @@ public class ZookeeperConnectionDemo implements Watcher {
 			countDownLatch.countDown();
 	}
 
-	public static final String ADDRESS = "192.168.0.151:2181";
+	public static final String ADDRESS = "10.10.143.147:2181";
 
 	public static void main(String[] args) throws IOException {
 		ZooKeeper zooKeeper = new ZooKeeper(ADDRESS, 5000, new ZookeeperConnectionDemo());

@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.rmi;
+package cn.segema.learn.rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

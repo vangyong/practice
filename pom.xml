@@ -10,18 +10,24 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 
-		<!-- jackson -->
-		<!-- <dependency> 
-			<groupId>org.codehaus.jackson</groupId> 
-			<artifactId>jackson-core-asl</artifactId> 
-			<version>1.9.13</version> 
-		</dependency> 
-		<dependency> 
-			<groupId>org.codehaus.jackson</groupId> 
-			<artifactId>jackson-mapper-asl</artifactId> 
-			<version>1.9.13</version> 
-		</dependency> -->
-		
+		<!-- jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.10.4</version>
+		</dependency>
+		<!-- jackson-core -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.10.4</version>
+		</dependency>
+		<!-- jackson-annotations -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.10.4</version>
+		</dependency>
 		
 		<!-- aspectjweaver -->
 		<dependency>
@@ -80,14 +86,6 @@
 			<version>3.3.0</version>
 		</dependency>
 
-		<!-- storm -->
-		<dependency>
-			<groupId>org.apache.storm</groupId>
-			<artifactId>storm-core</artifactId>
-			<version>1.2.2</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -101,7 +99,6 @@
 			<artifactId>clickhouse-jdbc</artifactId>
 			<version>0.1.40</version>
 		</dependency> -->
-		
 		<!-- <dependency>
 		    <groupId>com.github.housepower</groupId>
 		    <artifactId>clickhouse-native-jdbc</artifactId>
@@ -140,7 +137,6 @@
 			<artifactId>jnats</artifactId>
 			<version>2.5.0</version>
 		</dependency>
-
 		<!-- nats-streaming -->
 		<!-- <dependency> 
 			<groupId>io.nats</groupId> 
@@ -154,14 +150,12 @@
 			<artifactId>elasticsearch</artifactId>
 			<version>6.8.3</version>
 		</dependency>
-		
 		<!-- elasticsearch-rest-client -->
 		<dependency>
 			<groupId>org.elasticsearch.client</groupId>
 			<artifactId>elasticsearch-rest-client</artifactId>
 			<version>6.8.3</version>
 		</dependency>
-		
 		<!-- elasticsearch-rest-high-level-client -->
 		<dependency>
 		    <groupId>org.elasticsearch.client</groupId>
@@ -173,7 +167,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.58</version>
+			<version>1.2.68</version>
 		</dependency>
 
 		<!-- rocksdb -->
@@ -182,7 +176,6 @@
 			<artifactId>rocksdb</artifactId>
 			<version>6</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.rocksdb</groupId>
 			<artifactId>rocksdbjni</artifactId>
@@ -195,7 +188,6 @@
 			<artifactId>jedis</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		
 		<!-- redisson -->
 		<!-- <dependency>
 		    <groupId>org.redisson</groupId>
@@ -228,7 +220,7 @@
 		<dependency> 
 			<groupId>org.springframework</groupId> 
 			<artifactId>spring-test</artifactId> 
-			<version>5.1.8.RELEASE</version>
+			<version>5.2.2.RELEASE</version>
 			<scope>test</scope> 
 		</dependency>
 
@@ -246,21 +238,18 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.3.Final</version>
 		</dependency>
-
 		<!-- hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.4.3.Final</version>
 		</dependency>
-
 		<!-- hibernate-annotations -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.5.6-Final</version>
 		</dependency>
-
 		<!-- hibernate-jpa-2.1-api -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -272,16 +261,16 @@
 <!-- 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>5.1.9.RELEASE</version>
+			<version>5.2.2.RELEASE</version>
 		</dependency> -->
 		
 		<!-- zookeeper -->
 		<!-- <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.5.6</version>
+            <version>3.4.14</version>
         </dependency> -->
-		
+        
 		<!-- hadoop -->
 		<dependency>
 		    <groupId>org.apache.hadoop</groupId>
@@ -319,8 +308,6 @@
 		    <scope>provided</scope>
 		</dependency>
 		
-	    
-
 		<!-- thrift -->
 		<dependency>
 			<groupId>org.apache.thrift</groupId>
@@ -366,12 +353,6 @@
 		    <version>1.8</version>
 		    <scope>system</scope>
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
-		</dependency> -->
-		
-		<!-- <dependency>
-		    <groupId>io.seata</groupId>
-		    <artifactId>seata-all</artifactId>
-		    <version>1.2.0</version>
 		</dependency> -->
 
 	</dependencies>

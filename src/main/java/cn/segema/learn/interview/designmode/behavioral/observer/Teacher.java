@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.designmode.behavioral.observe;
+package cn.segema.learn.interview.designmode.behavioral.observer;
 
 import java.util.ArrayList;
 import java.util.List;

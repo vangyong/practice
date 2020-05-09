@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.designmode.behavioral.observe;
+package cn.segema.learn.interview.designmode.behavioral.observer;
 
 public interface Observer {
 

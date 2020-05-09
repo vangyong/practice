@@ -1,6 +1,10 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
-//懒汉式单例类
+/**
+ * @description 懒汉式单例类
+ * @author wangyong
+ * @createDate 2020/05/09
+ */
 public class LazySingleton {
 
 	/* 持有私有静态实例，防止被引用，此处赋值为null，目的是实现延迟加载 */

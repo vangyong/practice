@@ -3,11 +3,11 @@ package cn.segema.learn.interview.designmode.creational.abstractfactory;
 public class AbstractFactoryDemo {
 	public static void main(String[] args) {
 
-//		AbstractFactory abstractFactory1 = new ConcreteFactory1();
-//		AbstractProductA productA =  abstractFactory1.createProductA();
-//		AbstractProductB productB =  abstractFactory1.createProductB();
-//		productA.use();
-//		productB.eat();
+		AbstractFactory abstractFactory1 = new ConcreteFactory1();
+		AbstractProductA productA1 =  abstractFactory1.createProductA();
+		AbstractProductB productB1 =  abstractFactory1.createProductB();
+		productA1.use();
+		productB1.eat();
 		
 		
 		AbstractFactory abstractFactory2 = new ConcreteFactory2();

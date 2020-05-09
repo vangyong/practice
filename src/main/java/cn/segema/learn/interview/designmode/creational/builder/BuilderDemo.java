@@ -4,8 +4,8 @@ public class BuilderDemo {
 
 	public static void main(String[] args) {
 //		SubMealBuilderA subMealBuilderA = new SubMealBuilderA();
-//		KFCWaiter KFCWaiter = new KFCWaiter(subMealBuilderA);
-//		KFCWaiter.mealBuilder.buildDrink();
+//		KFCWaiter KFCWaiter1 = new KFCWaiter(subMealBuilderA);
+//		KFCWaiter1.mealBuilder.buildDrink();
 		
 		SubMealBuilderB subMealBuilderB = new SubMealBuilderB();
 		KFCWaiter KFCWaiter2 = new KFCWaiter(subMealBuilderB);

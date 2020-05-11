@@ -1,23 +1,23 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
+/**
+ * @description 饿汉实现单例
+ * @author wangyong
+ * @createDate 2020/05/11
+ */
 public class HungrySingleton {
-	// 饿汉，变种
-	private static HungrySingleton instance = null;
-	static {
-		instance = new HungrySingleton();
-	}
+    private static HungrySingleton instance = new HungrySingleton();
 
-	private HungrySingleton() {
-	}
+    private HungrySingleton() {}
 
-	public static HungrySingleton getInstance() {
-		return instance;
-	}
-	
-	public String sayHello(String param) {
-		System.out.println("param:"+param);
-		System.out.println("this is HungrySingleton!");
-		return "sayHello";
-	}
+    public static HungrySingleton getInstance() {
+        return instance;
+    }
+
+    public String sayHello(String param) {
+        System.out.println("param:" + param);
+        System.out.println("this is HungrySingleton!");
+        return "sayHello";
+    }
 
 }

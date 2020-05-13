@@ -349,6 +349,13 @@
            <version>0.7.3</version>
         </dependency>
         
+        <!-- dnsjava -->
+		<dependency>
+		    <groupId>dnsjava</groupId>
+		    <artifactId>dnsjava</artifactId>
+		    <version>2.1.9</version>
+		</dependency>
+        
         <!--布隆过滤器-->
         <dependency>
             <groupId>com.google.guava</groupId>

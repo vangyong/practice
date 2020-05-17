@@ -9,10 +9,10 @@ public class ReflectDemo {
 		AccountDomain account = new AccountDomain(null, null, 0);
 		System.out.println("******");
 		try {
-			AccountDomain a = (AccountDomain) Class.forName("cn.segema.learn.interview.base.AccountDomain").newInstance();
+			AccountDomain a = (AccountDomain) Class.forName("cn.segema.learn.interview.basic.AccountDomain").newInstance();
 			Constructor<AccountDomain> accountConstructor;
 			try {
-				accountConstructor = (Constructor<AccountDomain>) Class.forName("cn.segema.learn.interview.base.AccountDomain").getConstructor();
+				accountConstructor = (Constructor<AccountDomain>) Class.forName("cn.segema.learn.interview.basic.AccountDomain").getConstructor();
 				AccountDomain b = accountConstructor.newInstance();
 				b.setName("构造器初始化");
 				System.out.println(b.getName());

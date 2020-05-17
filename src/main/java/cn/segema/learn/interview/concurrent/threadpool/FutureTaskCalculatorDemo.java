@@ -1,19 +1,19 @@
-package cn.segema.learn.interview.basic;
+package cn.segema.learn.interview.concurrent.threadpool;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CompletionService;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorCompletionService;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
-public class ConcurrentCalculatorDemo2 {
+public class FutureTaskCalculatorDemo {
 
 	private ExecutorService exec;
-
-	private CompletionService<Long> completionService;
-
 	private int cpuCoreNumber;
+	private List<Future<Long>> tasks = new ArrayList<Future<Long>>();
 
 	// 内部类
 	class SumCalculator implements Callable<Long> {
@@ -36,11 +36,9 @@ public class ConcurrentCalculatorDemo2 {
 		}
 	}
 
-	public ConcurrentCalculatorDemo2() {
+	public FutureTaskCalculatorDemo() {
 		cpuCoreNumber = Runtime.getRuntime().availableProcessors();
 		exec = Executors.newFixedThreadPool(cpuCoreNumber);
-		completionService = new ExecutorCompletionService<Long>(exec);
-
 	}
 
 	public Long sum(final int[] numbers) {
@@ -52,11 +50,11 @@ public class ConcurrentCalculatorDemo2 {
 			if (end > numbers.length)
 				end = numbers.length;
 			SumCalculator subCalc = new SumCalculator(numbers, start, end);
+			FutureTask<Long> task = new FutureTask<Long>(subCalc);
+			tasks.add(task);
 			if (!exec.isShutdown()) {
-				completionService.submit(subCalc);
-
+				exec.submit(task);
 			}
-
 		}
 		return getResult();
 	}
@@ -68,9 +66,10 @@ public class ConcurrentCalculatorDemo2 {
 	 */
 	public Long getResult() {
 		Long result = 0l;
-		for (int i = 0; i < cpuCoreNumber; i++) {
+		for (Future<Long> task : tasks) {
 			try {
-				Long subSum = completionService.take().get();
+				// 如果计算未完成则阻塞
+				Long subSum = task.get();
 				result += subSum;
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -83,5 +82,13 @@ public class ConcurrentCalculatorDemo2 {
 
 	public void close() {
 		exec.shutdown();
+	}
+
+	public static void main(String[] args) {
+		int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 10, 11 };
+		FutureTaskCalculatorDemo calc = new FutureTaskCalculatorDemo();
+		Long sum = calc.sum(numbers);
+		System.out.println(sum);
+		calc.close();
 	}
 }

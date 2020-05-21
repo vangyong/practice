@@ -118,11 +118,19 @@
 		</dependency>
 
 		<!-- netty -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>4.1.31.Final</version>
-		</dependency> -->
+		</dependency>
+		
+		<!-- msgpack 解码编码器 - -->
+        <dependency>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack</artifactId>
+            <version>0.6.12</version>
+        </dependency>
+		
 
 		<!-- reactor -->
 		<dependency>

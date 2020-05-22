@@ -9,6 +9,8 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
+import io.netty.handler.codec.FixedLengthFrameDecoder;
+
 public class NIOServer {
 
 	// 通道管理器
@@ -20,16 +22,16 @@ public class NIOServer {
 	 */
 	public void initServer(int port) throws IOException {
 		// 获得一个ServerSocket通道
-		ServerSocketChannel serverChannel = ServerSocketChannel.open();
+		ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
 		// 设置通道为非阻塞
-		serverChannel.configureBlocking(false);
+		serverSocketChannel.configureBlocking(false);
 		// 将该通道对应的ServerSocket绑定到port端口
-		serverChannel.socket().bind(new InetSocketAddress(port));
+		serverSocketChannel.socket().bind(new InetSocketAddress(port));
 		// 获得一个通道管理器
 		this.selector = Selector.open();
 		// 将通道管理器和该通道绑定，并为该通道注册SelectionKey.OP_ACCEPT事件,注册该事件后，
 		// 当该事件到达时，selector.select()会返回，如果该事件没到达selector.select()会一直阻塞。
-		serverChannel.register(selector, SelectionKey.OP_ACCEPT);
+		serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 	}
 
 	/**
@@ -54,14 +56,13 @@ public class NIOServer {
 					SocketChannel socketChannel = serverSocketChannel.accept();
 					socketChannel.configureBlocking(false);
 					socketChannel.write(ByteBuffer.wrap(new String("向客户端发送了一条信息").getBytes()));
+					
 					// 在和客户端连接成功之后，为了可以接收到客户端的信息，需要给通道设置读的权限。
 					socketChannel.register(this.selector, SelectionKey.OP_READ);
 				} else if (selectionKey.isReadable()) {
 					read(selectionKey);
 				}
-
 			}
-
 		}
 	}
 

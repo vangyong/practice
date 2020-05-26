@@ -1,7 +1,5 @@
 package cn.segema.learn.util;
 
-import org.xbill.DNS.utils.hexdump;
-
 public class HexUtil {
 
 	/**

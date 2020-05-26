@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import java.util.Base64;
 import java.util.UUID;
 
-public class UuidUtil {
+public class GuidUtil {
 
     public static String guid() {
         UUID u = UUID.randomUUID();
@@ -14,7 +14,7 @@ public class UuidUtil {
         return guid;
     }
 
-    public static UUID g2u(String id) {
+    public static UUID guid2uuid(String id) {
         UUID uuid = UUID.nameUUIDFromBytes(Base64.getUrlDecoder().decode((id + "==").getBytes()));
         return uuid;
     }
@@ -22,7 +22,7 @@ public class UuidUtil {
     public static void main(String[] args) {
         String guid = guid();
         System.out.println(guid);
-        UUID uuid = g2u(guid);
+        UUID uuid = guid2uuid(guid);
         System.out.println(uuid);
     }
 }

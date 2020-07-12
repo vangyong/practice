@@ -56,9 +56,7 @@ public class NIOClient {
 				} else if (selectionKey.isReadable()) {
 					read(selectionKey);
 				}
-
 			}
-
 		}
 	}
 
@@ -83,8 +81,6 @@ public class NIOClient {
 
 	/**
 	 * 启动客户端测试
-	 * 
-	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
 		NIOClient client = new NIOClient();

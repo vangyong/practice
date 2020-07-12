@@ -29,11 +29,11 @@ public class PluginManager {
 		urlClassLoader = new URLClassLoader(urls);
 	}
 
-	public PluginService getInstance(String className)
+	public PluginServiceDemo getInstance(String className)
 			throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		// 插件实例化对象，得到每一个插件具体的对象
 		Class<?> clazz = urlClassLoader.loadClass(className);
 		Object instance = clazz.newInstance();
-		return (PluginService) instance;
+		return (PluginServiceDemo) instance;
 	}
 }

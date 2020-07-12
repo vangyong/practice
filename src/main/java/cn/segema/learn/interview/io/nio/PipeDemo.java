@@ -11,25 +11,25 @@ import java.nio.channels.Pipe;
  */
 public class PipeDemo {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-		Pipe pipe = Pipe.open();
-		Pipe.SinkChannel sinkChannel = pipe.sink();
-		String newData = "New String to write to file..." + System.currentTimeMillis();
-		ByteBuffer buf = ByteBuffer.allocate(48);
-		buf.clear();
-		buf.put(newData.getBytes());
+        Pipe pipe = Pipe.open();
+        Pipe.SinkChannel sinkChannel = pipe.sink();
+        String newData = "New String to write to file..." + System.currentTimeMillis();
+        ByteBuffer buf = ByteBuffer.allocate(48);
+        buf.clear();
+        buf.put(newData.getBytes());
 
-		buf.flip();
+        buf.flip();
 
-		while (buf.hasRemaining()) {
-			sinkChannel.write(buf);
-		}
-		buf.flip();
-		int len = buf.limit() - buf.position();
-	    byte[] bytes = new byte[len];
-	    buf.get(bytes);
-		System.out.println(new String(bytes,"UTF-8"));
-	}
+        while (buf.hasRemaining()) {
+            sinkChannel.write(buf);
+        }
+        buf.flip();
+        int len = buf.limit() - buf.position();
+        byte[] bytes = new byte[len];
+        buf.get(bytes);
+        System.out.println(new String(bytes, "UTF-8"));
+    }
 
 }

@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HashMapDemo {
-	Map<String, Object> map = new HashMap<String, Object>();
-	map.
+	public static void main(String[] args) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put(null,"nullvalue");
+		System.out.println(map.get(null));
+	}
 }

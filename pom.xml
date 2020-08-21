@@ -391,6 +391,12 @@
 		    <scope>system</scope>
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
 		</dependency> -->
+		
+		<dependency>
+		    <groupId>net.java.dev.jna</groupId>
+		    <artifactId>jna</artifactId>
+		    <version>5.6.0</version>
+		</dependency>
 
 	</dependencies>
 	<build>

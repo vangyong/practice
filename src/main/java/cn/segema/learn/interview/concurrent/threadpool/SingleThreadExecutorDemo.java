@@ -3,6 +3,7 @@ package cn.segema.learn.interview.concurrent.threadpool;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+//单线程化的线程池，它只会用唯一的工作线程来执行任务
 public class SingleThreadExecutorDemo {
 
 	public static void main(String[] args) {

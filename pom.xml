@@ -392,6 +392,7 @@
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
 		</dependency> -->
 		
+<<<<<<< HEAD
 		<!-- fastjson -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
@@ -399,6 +400,13 @@
 		    <version>1.2.67</version>
 		</dependency>
 		
+=======
+		<dependency>
+		    <groupId>net.java.dev.jna</groupId>
+		    <artifactId>jna</artifactId>
+		    <version>5.6.0</version>
+		</dependency>
+>>>>>>> e18a7b8d975bb8075c1f12343a466454dad546e6
 
 	</dependencies>
 	<build>

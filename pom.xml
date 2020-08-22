@@ -392,21 +392,35 @@
 		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
 		</dependency> -->
 		
-<<<<<<< HEAD
 		<!-- fastjson -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
 		    <artifactId>fastjson</artifactId>
 		    <version>1.2.67</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.25</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+			<version>1.7.25</version>
+		</dependency>
 		
-=======
 		<dependency>
 		    <groupId>net.java.dev.jna</groupId>
 		    <artifactId>jna</artifactId>
 		    <version>5.6.0</version>
 		</dependency>
->>>>>>> e18a7b8d975bb8075c1f12343a466454dad546e6
+
 
 	</dependencies>
 	<build>

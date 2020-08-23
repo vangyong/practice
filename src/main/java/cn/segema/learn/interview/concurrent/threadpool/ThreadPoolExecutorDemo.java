@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ThreadPoolDemo {
+public class ThreadPoolExecutorDemo {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		int corePoolSize = 2;
 		int maximumPoolSize = 4;

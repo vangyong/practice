@@ -18,6 +18,11 @@ import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
 
+/**
+ * @description rest-high-level-client
+ * @author wangyong
+ * @createDate 2020/08/25
+ */
 public class RestHighLevelClientDemo {
     static String indexName = "car";
     static String indexType = "transaction";

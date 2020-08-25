@@ -12,6 +12,11 @@ import org.elasticsearch.client.RestClient;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+/**
+ * @description rest-client操作es
+ * @author wangyong
+ * @createDate 2020/08/25
+ */
 public class RestClientDemo {
 
     public static final RestClient restClient = RestClient.builder(new HttpHost("10.10.143.147", 9200, "http")).build();

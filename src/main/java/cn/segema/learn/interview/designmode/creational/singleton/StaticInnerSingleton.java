@@ -1,7 +1,7 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
 /**
- * @description 静态内部类实现单例
+ * @description 静态内部类单例
  * @author wangyong
  * @createDate 2020/05/11
  */

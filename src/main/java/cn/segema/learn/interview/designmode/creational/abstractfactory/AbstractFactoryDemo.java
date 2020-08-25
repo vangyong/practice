@@ -1,5 +1,10 @@
 package cn.segema.learn.interview.designmode.creational.abstractfactory;
 
+/**
+ * @description 抽象工厂
+ * @author wangyong
+ * @createDate 2020/08/25
+ */
 public class AbstractFactoryDemo {
 	public static void main(String[] args) {
 

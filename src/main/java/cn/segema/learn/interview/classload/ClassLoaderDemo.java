@@ -1,23 +1,20 @@
 package cn.segema.learn.interview.classload;
 
 public class ClassLoaderDemo {
-	
-	private String name ="ddd";
-	
-	
-	public String getName() {
-		return name;
-	}
 
+    private String name = "ddd";
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public static void main(String[] args) {
-		System.out.println("this is a demo test myclassloader");
-		
-	}
+    public static void main(String[] args) {
+        System.out.println("this is a demo test ClassLoaderDemo");
+
+    }
 
 }

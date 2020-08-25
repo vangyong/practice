@@ -14,6 +14,14 @@ public class ProactorServerDemo {
 
     private final static int port = 9999;
 
+    public static void main(String[] args) {
+        try {
+            ProactorServerDemo.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void start() throws IOException {
 
         AsynchronousServerSocketChannel channel = null;
@@ -25,15 +33,6 @@ public class ProactorServerDemo {
             channel.accept(null, new Acceptor());
             CountDownLatch latch = new CountDownLatch(1);
             latch.await();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public static void main(String[] args) {
-        try {
-            ProactorServerDemo.start();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,7 +58,6 @@ public class ProactorServerDemo {
     }
 
     public static class ReadHandler implements CompletionHandler<Integer, ByteBuffer> {
-
         private AsynchronousSocketChannel socketChannel;
 
         public ReadHandler(AsynchronousSocketChannel socketChannel) {

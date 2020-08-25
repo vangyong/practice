@@ -1,7 +1,7 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
 /**
- * @description 饿汉实现单例
+ * @description 饿汉式单例
  * @author wangyong
  * @createDate 2020/05/11
  */

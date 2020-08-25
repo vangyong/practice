@@ -1,5 +1,10 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
+/**
+ * @description 双重校验单例
+ * @author wangyong
+ * @createDate 2020/08/25
+ */
 public class DoubleCheckSingleton {
 	// 双重校验锁
 	private volatile static DoubleCheckSingleton singleton;

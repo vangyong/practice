@@ -1,5 +1,10 @@
 package cn.segema.learn.interview.designmode.creational.singleton;
 
+/**
+ * @description 工厂单例
+ * @author wangyong
+ * @createDate 2020/08/25
+ */
 public class FactorySingleton {
 
 	/* 私有构造方法，防止被实例化 */

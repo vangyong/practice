@@ -3,7 +3,7 @@ package cn.segema.learn.interview.designmode.creational.singleton;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
-* @description 一句话描述该类的功能
+* @description cas自旋式单例
 * @author wangyong
 * @createDate 2020/05/11
 */
@@ -23,5 +23,12 @@ public class CasSingleton {
                 return singleton;
             }
         }
+    }
+    
+    
+    public String sayHello(String param) {
+        System.out.println("param:" + param);
+        System.out.println("this is CasSingleton!");
+        return "sayHello";
     }
 }

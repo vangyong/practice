@@ -12,71 +12,71 @@
 
 		<!-- jackson-databind -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <version>2.10.2</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.10.2</version>
 		</dependency>
 		<!-- jackson-core -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		    <version>2.10.2</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.10.2</version>
 		</dependency>
 		<!-- jackson-annotations -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>2.10.2</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.10.2</version>
 		</dependency>
-		
+
 		<!-- aspectjweaver -->
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjweaver</artifactId>
-		    <version>1.9.5</version>
-		    <scope>runtime</scope>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.5</version>
+			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- aspectjrt -->
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjrt</artifactId>
-		    <version>1.9.5</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.9.5</version>
 		</dependency>
-		
+
 		<!-- spring-aop -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aop</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>5.2.2.RELEASE</version>
 		</dependency>
-		
+
 		<!-- spring-beans -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-beans</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>5.2.2.RELEASE</version>
 		</dependency>
-		
+
 		<!-- spring-context -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.2.2.RELEASE</version>
 		</dependency>
-		
+
 		<!-- spring-core -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-core</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>5.2.2.RELEASE</version>
 		</dependency>
-		
+
 		<!-- spring-context-support -->
 		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context-support</artifactId>
-		    <version>5.2.2.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>5.2.2.RELEASE</version>
 		</dependency>
 
 		<!-- cglib -->
@@ -92,25 +92,19 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.20</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-core</artifactId>
-		    <version>2.13.3</version>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.3</version>
 		</dependency>
-		
+
 
 		<!-- clickhouse -->
-		<!--<dependency>
-			<groupId>ru.yandex.clickhouse</groupId>
-			<artifactId>clickhouse-jdbc</artifactId>
-			<version>0.1.40</version>
-		</dependency> -->
-		<!-- <dependency>
-		    <groupId>com.github.housepower</groupId>
-		    <artifactId>clickhouse-native-jdbc</artifactId>
-		    <version>1.7-stable</version>
-		</dependency> -->
+		<!--<dependency> <groupId>ru.yandex.clickhouse</groupId> <artifactId>clickhouse-jdbc</artifactId> 
+			<version>0.1.40</version> </dependency> -->
+		<!-- <dependency> <groupId>com.github.housepower</groupId> <artifactId>clickhouse-native-jdbc</artifactId> 
+			<version>1.7-stable</version> </dependency> -->
 
 		<!-- qrcode -->
 		<dependency>
@@ -130,14 +124,14 @@
 			<artifactId>netty-all</artifactId>
 			<version>4.1.31.Final</version>
 		</dependency>
-		
+
 		<!-- msgpack 解码编码器 - -->
-        <dependency>
-            <groupId>org.msgpack</groupId>
-            <artifactId>msgpack</artifactId>
-            <version>0.6.12</version>
-        </dependency>
-		
+		<dependency>
+			<groupId>org.msgpack</groupId>
+			<artifactId>msgpack</artifactId>
+			<version>0.6.12</version>
+		</dependency>
+
 
 		<!-- reactor -->
 		<dependency>
@@ -153,11 +147,8 @@
 			<version>2.5.0</version>
 		</dependency>
 		<!-- nats-streaming -->
-		<!-- <dependency> 
-			<groupId>io.nats</groupId> 
-			<artifactId>java-nats-streaming</artifactId> 
-			<version>2.1.6</version> 
-		</dependency> -->
+		<!-- <dependency> <groupId>io.nats</groupId> <artifactId>java-nats-streaming</artifactId> 
+			<version>2.1.6</version> </dependency> -->
 
 		<!-- elasticsearch -->
 		<dependency>
@@ -173,16 +164,9 @@
 		</dependency>
 		<!-- elasticsearch-rest-high-level-client -->
 		<dependency>
-		    <groupId>org.elasticsearch.client</groupId>
-		    <artifactId>elasticsearch-rest-high-level-client</artifactId>
-		    <version>6.8.3</version>
-		</dependency>
-
-		<!-- fastjson -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.68</version>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-high-level-client</artifactId>
+			<version>6.8.3</version>
 		</dependency>
 
 		<!-- rocksdb -->
@@ -204,26 +188,23 @@
 			<version>3.0.1</version>
 		</dependency>
 		<!-- redisson -->
-		<!-- <dependency>
-		    <groupId>org.redisson</groupId>
-		    <artifactId>redisson</artifactId>
-		    <version>3.12.5</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.redisson</groupId> <artifactId>redisson</artifactId> 
+			<version>3.12.5</version> </dependency> -->
+
 		<!-- mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.5.2</version>
 		</dependency>
-		
+
 		<!-- pagehelper -->
 		<dependency>
-		    <groupId>com.github.pagehelper</groupId>
-		    <artifactId>pagehelper</artifactId>
-		    <version>5.1.11</version>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>5.1.11</version>
 		</dependency>
-		
+
 		<!-- mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -232,11 +213,11 @@
 		</dependency>
 
 		<!-- spring-test -->
-		<dependency> 
-			<groupId>org.springframework</groupId> 
-			<artifactId>spring-test</artifactId> 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 			<version>5.2.2.RELEASE</version>
-			<scope>test</scope> 
+			<scope>test</scope>
 		</dependency>
 
 		<!-- junit -->
@@ -273,24 +254,18 @@
 		</dependency>
 
 		<!-- spring-webmvc -->
-<!-- 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>5.2.2.RELEASE</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> 
+			<version>5.2.2.RELEASE</version> </dependency> -->
+
 		<!-- zookeeper -->
-		<!-- <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.14</version>
-        </dependency> -->
-        
+		<!-- <dependency> <groupId>org.apache.zookeeper</groupId> <artifactId>zookeeper</artifactId> 
+			<version>3.4.14</version> </dependency> -->
+
 		<!-- hadoop-client -->
 		<dependency>
-		    <groupId>org.apache.hadoop</groupId>
-		    <artifactId>hadoop-client</artifactId>
-		    <version>2.7.7</version>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-client</artifactId>
+			<version>2.7.7</version>
 		</dependency>
 
 		<!-- hbase-client -->
@@ -299,45 +274,45 @@
 			<artifactId>hbase-client</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
+
 		<!-- kafka-clients -->
 		<dependency>
-		    <groupId>org.apache.kafka</groupId>
-		    <artifactId>kafka-clients</artifactId>
-		    <version>2.4.0</version>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>2.4.0</version>
 		</dependency>
-		
+
 		<!-- kafka-streams -->
 		<dependency>
-		    <groupId>org.apache.kafka</groupId>
-		    <artifactId>kafka-streams</artifactId>
-		    <version>2.4.0</version>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>2.4.0</version>
 		</dependency>
-		
-		 
+
+
 		<!-- rocketmq-client -->
-	    <dependency>
-	        <groupId>org.apache.rocketmq</groupId>
-	        <artifactId>rocketmq-client</artifactId>
-	        <version>4.5.2</version>
-	    </dependency>
-	    
-	    <!-- flink-java -->
 		<dependency>
-		    <groupId>org.apache.flink</groupId>
-		    <artifactId>flink-java</artifactId>
-		    <version>1.10.0</version>
-		    <scope>provided</scope>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-client</artifactId>
+			<version>4.5.2</version>
 		</dependency>
-		
+
+		<!-- flink-java -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-java</artifactId>
+			<version>1.10.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<!-- flink-streaming-java -->
 		<dependency>
-		    <groupId>org.apache.flink</groupId>
-		    <artifactId>flink-streaming-java_2.12</artifactId>
-		    <version>1.10.0</version>
-		    <scope>provided</scope>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-streaming-java_2.12</artifactId>
+			<version>1.10.0</version>
+			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- thrift -->
 		<dependency>
 			<groupId>org.apache.thrift</groupId>
@@ -349,54 +324,47 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		
+
 		<!-- sofa-rpc -->
-		<!-- <dependency>
-            <groupId>com.alipay.sofa</groupId>
-            <artifactId>sofa-rpc-all</artifactId>
-            <version>5.3.1</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>com.alipay.sofa</groupId> <artifactId>sofa-rpc-all</artifactId> 
+			<version>5.3.1</version> </dependency> -->
+
 		<!-- webmagic -->
 		<dependency>
-           <groupId>us.codecraft</groupId>
-           <artifactId>webmagic-extension</artifactId>
-           <version>0.7.3</version>
-        </dependency>
-        
-        <!-- dnsjava -->
-		<dependency>
-		    <groupId>dnsjava</groupId>
-		    <artifactId>dnsjava</artifactId>
-		    <version>2.1.9</version>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-extension</artifactId>
+			<version>0.7.3</version>
 		</dependency>
-        
-        <!--布隆过滤器-->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>27.1-jre</version>
-        </dependency>
-        <dependency>
-            <groupId>us.codecraft</groupId>
-            <artifactId>webmagic-core</artifactId>
-            <version>0.7.3</version>
-        </dependency>
-		
+
+		<!-- dnsjava -->
+		<dependency>
+			<groupId>dnsjava</groupId>
+			<artifactId>dnsjava</artifactId>
+			<version>2.1.9</version>
+		</dependency>
+
+		<!--布隆过滤器 -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>27.1-jre</version>
+		</dependency>
+		<dependency>
+			<groupId>us.codecraft</groupId>
+			<artifactId>webmagic-core</artifactId>
+			<version>0.7.3</version>
+		</dependency>
+
 		<!-- windows -->
-		<!-- <dependency>
-		    <groupId>jdk.tools</groupId>
-		    <artifactId>jdk.tools</artifactId>
-		    <version>1.8</version>
-		    <scope>system</scope>
-		    <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>jdk.tools</groupId> <artifactId>jdk.tools</artifactId> 
+			<version>1.8</version> <scope>system</scope> <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath> 
+			</dependency> -->
+
 		<!-- fastjson -->
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.2.67</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.67</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
@@ -414,26 +382,71 @@
 			<artifactId>slf4j-nop</artifactId>
 			<version>1.7.25</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>net.java.dev.jna</groupId>
-		    <artifactId>jna</artifactId>
-		    <version>5.6.0</version>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+
+		<!-- ipv6 -->
+		<dependency>
+			<groupId>com.googlecode.java-ipv6</groupId>
+			<artifactId>java-ipv6</artifactId>
+			<version>0.17</version>
 		</dependency>
 		
-		<dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+		 <dependency>
+            <groupId>net.sourceforge.jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6.12</version>
         </dependency>
-        
-        <!-- ipv6 -->
+
+		<!-- poi -->
 		<dependency>
-		    <groupId>com.googlecode.java-ipv6</groupId>
-		    <artifactId>java-ipv6</artifactId>
-		    <version>0.17</version>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.1.2</version>
 		</dependency>
-        
+		
+		<dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+        </dependency>
+		
+		<!-- fastjson -->
+		<!-- <dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.73</version>
+		</dependency> -->
+		
+		<!-- jackson-core -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.11.2</version>
+		</dependency>
+		<!-- jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.11.2</version>
+		</dependency>
+		<!-- jackson-annotations -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.11.2</version>
+		</dependency>
+		
 
 
 	</dependencies>

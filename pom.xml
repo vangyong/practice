@@ -420,6 +420,20 @@
 		    <artifactId>jna</artifactId>
 		    <version>5.6.0</version>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
+        
+        <!-- ipv6 -->
+		<dependency>
+		    <groupId>com.googlecode.java-ipv6</groupId>
+		    <artifactId>java-ipv6</artifactId>
+		    <version>0.17</version>
+		</dependency>
+        
 
 
 	</dependencies>

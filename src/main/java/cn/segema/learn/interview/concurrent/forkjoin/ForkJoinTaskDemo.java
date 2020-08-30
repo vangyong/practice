@@ -5,6 +5,11 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.concurrent.RecursiveTask;
 
+/**
+ * @description 分而治之
+ * @author wangyong
+ * @createDate 2020/08/30
+ */
 public class ForkJoinTaskDemo extends RecursiveTask<Integer> {
 	private static final int THREAD_HOLD = 2;
 

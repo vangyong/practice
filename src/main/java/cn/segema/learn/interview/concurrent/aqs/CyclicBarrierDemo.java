@@ -1,4 +1,4 @@
-package cn.segema.learn.interview.concurrent.tool;
+package cn.segema.learn.interview.concurrent.aqs;
 
 import java.util.concurrent.CyclicBarrier;
 

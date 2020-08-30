@@ -29,10 +29,12 @@ public class DirectRecursiveDemo {
 			System.out.println(Thread.currentThread().getName() + "st1准备进入");
 			st1.recursive(5);
 		}).start();
+		
 		new Thread(() -> {
 			System.out.println(Thread.currentThread().getName() + " st2 准备进入");
 			st2.recursive(5);
 		}).start();
+		
 	}
 
 }

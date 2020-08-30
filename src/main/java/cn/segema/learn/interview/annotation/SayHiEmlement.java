@@ -1,12 +1,5 @@
 package cn.segema.learn.interview.annotation;
 
-/**
- * 要使用SayHiAnnotation的元素所在类
- * 由于我们定义了只有方法才能使用我们的注解，我们就使用多个方法来进行测试
- * 
- * @author Johness
- *
- */
 public class SayHiEmlement {
 
     // 普通的方法

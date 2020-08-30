@@ -2,16 +2,20 @@ package cn.segema.learn.interview.concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicLongArray;
 
+/**
+ * @description 长整形数组原子操作
+ * @author wangyong
+ * @createDate 2020/08/30
+ */
 public class AtomicLongArrayDemo {
 	public static void main(String[] args) {
-
-		// 新建AtomicLongArray对象
 		long[] arrLong = new long[] { 10, 20, 30, 40, 50 };
 		AtomicLongArray ala = new AtomicLongArray(arrLong);
 
 		ala.set(0, 100);
-		for (int i = 0, len = ala.length(); i < len; i++)
+		for (int i = 0, len = ala.length(); i < len; i++) {
 			System.out.printf("get(%d) : %s\n", i, ala.get(i));
+		}
 
 		System.out.printf("%20s : %s\n", "getAndDecrement(0)", ala.getAndDecrement(0));
 		System.out.printf("%20s : %s\n", "decrementAndGet(1)", ala.decrementAndGet(1));

@@ -2,6 +2,11 @@ package cn.segema.learn.interview.concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
+/**
+ * @description 原子读取和写入的底层引用数组
+ * @author wangyong
+ * @createDate 2020/08/30
+ */
 public class AtomicReferenceArrayDemo {
 	
 	private static String[] source = new String[10];

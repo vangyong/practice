@@ -11,7 +11,7 @@ import sun.misc.Unsafe;
  * @author wangyong
  * @createDate 2020/08/26
  */
-public class TulingLock {
+public class MyAqsLock {
 
 	private static Unsafe unsafe = UnsafeInstance.reflectGetUnsafe();
 
@@ -19,7 +19,7 @@ public class TulingLock {
 
 	static {
 		try {
-			stateoffset = unsafe.objectFieldOffset(TulingLock.class.getField("state"));
+			stateoffset = unsafe.objectFieldOffset(MyAqsLock.class.getField("state"));
 		} catch (Exception e) {
 			throw new Error();
 		}

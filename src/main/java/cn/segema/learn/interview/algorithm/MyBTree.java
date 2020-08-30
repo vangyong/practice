@@ -1,5 +1,10 @@
 package cn.segema.learn.interview.algorithm;
 
+/**
+ * @description B树
+ * @author wangyong
+ * @createDate 2020/08/30
+ */
 class BTreeNode{
 	int T;
 	int count;

@@ -1,5 +1,11 @@
 package cn.segema.learn.interview.thread;
 
+/**
+ * @description 把指定的线程加入到当前线程
+ * 如:在线程B中调用了线程A的Join()方法，直到线程A执行完毕后，才会继续执行线程B
+ * @author wangyong
+ * @createDate 2020/08/30
+ */
 public class ThreadJoinDemo {
 
 	public static void main(String[] args) throws InterruptedException {

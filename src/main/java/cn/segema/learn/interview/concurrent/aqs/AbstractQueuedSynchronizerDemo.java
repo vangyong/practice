@@ -1,7 +1,7 @@
 package cn.segema.learn.interview.concurrent.aqs;
 
 /**
- * @description 同步器
+ * @description 抽象队列同步器
  * @author wangyong
  * @createDate 2020/08/26
  */

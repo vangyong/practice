@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class BlockingQueueDemo {
+public class LinkedBlockingQueueDemo2 {
 	/**
 	 * 实例化一个队列，队列中的容量为10
 	 */

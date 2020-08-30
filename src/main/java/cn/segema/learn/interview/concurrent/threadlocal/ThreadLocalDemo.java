@@ -1,7 +1,6 @@
 package cn.segema.learn.interview.concurrent.threadlocal;
 
 public class ThreadLocalDemo {
-	
 
 	private static final ThreadLocal<Object> threadLocal = new ThreadLocal<Object>() {
 		/**
@@ -16,9 +15,9 @@ public class ThreadLocalDemo {
 
 	public static void main(String[] args) {
 		new Thread(new MyIntegerTask("IntegerTask1")).start();
-		//new Thread(new MyStringTask("StringTask1")).start();
+		// new Thread(new MyStringTask("StringTask1")).start();
 		new Thread(new MyIntegerTask("IntegerTask2")).start();
-		//new Thread(new MyStringTask("StringTask2")).start();
+		// new Thread(new MyStringTask("StringTask2")).start();
 	}
 
 	public static class MyIntegerTask implements Runnable {
@@ -80,6 +79,5 @@ public class ThreadLocalDemo {
 		}
 
 	}
-	
-	
+
 }

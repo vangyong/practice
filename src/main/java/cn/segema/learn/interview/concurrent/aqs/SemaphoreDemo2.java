@@ -1,8 +1,8 @@
-package cn.segema.learn.interview.concurrent.tool;
+package cn.segema.learn.interview.concurrent.aqs;
 
 import java.util.concurrent.Semaphore;
 
-public class SemaphoreDemo {
+public class SemaphoreDemo2 {
 
     // 控制线程的数目为1，也就是单线程
     private Semaphore semaphore = new Semaphore(1);

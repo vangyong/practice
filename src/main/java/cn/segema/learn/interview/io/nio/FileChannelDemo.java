@@ -54,15 +54,13 @@ public class FileChannelDemo {
         System.out.println("transferTo end!");
     }
 
-    public void transferFrom() throws Exception {
-        FileChannel fromChannel =
-            new RandomAccessFile(new File(LoadResourceDemo.class.getClassLoader().getResource(SOURCE_FILE).toURI()),
-                "rw").getChannel();
-        FileChannel toChannel =
-            new RandomAccessFile(new File(LoadResourceDemo.class.getClassLoader().getResource(TARGET_FILE).toURI()),
-                "rw").getChannel();
-        long position = 0L;
-        long offset = fromChannel.size();
-        toChannel.transferFrom(fromChannel, position, offset);
-    }
+	public void transferFrom() throws Exception {
+		FileChannel fromChannel = new RandomAccessFile(
+				new File(LoadResourceDemo.class.getClassLoader().getResource(SOURCE_FILE).toURI()), "rw").getChannel();
+		FileChannel toChannel = new RandomAccessFile(
+				new File(LoadResourceDemo.class.getClassLoader().getResource(TARGET_FILE).toURI()), "rw").getChannel();
+		long position = 0L;
+		long offset = fromChannel.size();
+		toChannel.transferFrom(fromChannel, position, offset);
+	}
 }

@@ -11,6 +11,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/**
+ * @description 虚拟内存映射
+ * @author wangyong
+ * @createDate 2020/09/10
+ */
 public class MappedByteBufferDemo {
 	private final static String CONTENT = "Zero copy implemented by MappedByteBuffer";
 	private final static String FILE_NAME = "/mmap.txt";
@@ -18,7 +23,7 @@ public class MappedByteBufferDemo {
 
 	public static void main(String[] args) throws URISyntaxException {
 		MappedByteBufferDemo mappedByteBufferDemo = new MappedByteBufferDemo();
-//        mappedByteBufferDemo.writeToFileByMappedByteBuffer();
+        mappedByteBufferDemo.writeToFileByMappedByteBuffer();
 		mappedByteBufferDemo.readFromFileByMappedByteBuffer();
 	}
 

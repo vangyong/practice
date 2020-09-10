@@ -14,7 +14,8 @@ import java.nio.file.StandardOpenOption;
 import cn.segema.learn.interview.classload.LoadResourceDemo;
 
 /**
- * @description 一句话描述该类的功能
+ * @description 文件传输,提高传输的效率
+ * 将一个通道连接到另一个通道，不需要中间缓冲区来传递数据
  * @author wangyong
  * @createDate 2020/08/25
  */

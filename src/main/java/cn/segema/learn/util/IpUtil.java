@@ -96,8 +96,6 @@ public class IpUtil {
         return match;
     }
 
-   
-
     /**
      * @description ipv4、ipv6转换BigInteger
      * @param ip
@@ -113,8 +111,6 @@ public class IpUtil {
         }
         return null;
     }
-
-   
 
     /**
      * @description 根据ip获取范围地址 </br>
@@ -198,7 +194,7 @@ public class IpUtil {
             + (Long.parseLong(ipArray[2]) << 8) + Long.parseLong(ipArray[3]);
         return BigInteger.valueOf(ipLong);
     }
-    
+
     /**
      * @description ipv6转换为BigInteger
      * @param ipv6
@@ -238,7 +234,7 @@ public class IpUtil {
         }
         return big;
     }
-    
+
     /**
      * @description BigInteger转字符串型ipv4
      * @param ipBigInteger
@@ -272,18 +268,17 @@ public class IpUtil {
         String ipv6 = str.replaceFirst("(^|:)(0+(:|$)){2,8}", "::");
         return abbreviationToIpv6(ipv6);
     }
-    
+
     public static String bigIntegerToIp(BigInteger ipBigInteger) {
         String ip = bigIntegerToIpv6(ipBigInteger);
-        if("0.0.0.0".equals(ip)) {
+        if ("0.0.0.0".equals(ip)) {
             ip = bigIntegerToIpv4(ipBigInteger);
             return ip;
-        }else {
+        } else {
             return ip;
         }
     }
-    
-    
+
     /**
      * 根据网段计算起始IP 网段格式:x.x.x.x/x
      * 一个网段0一般为网络地址,255一般为广播地址.
@@ -392,7 +387,7 @@ public class IpUtil {
         IPv6Network rangeNetwork = IPv6Network.fromString(segment);
         return rangeNetwork.getFirst().toString();
     }
-    
+
     /**
      * @description 根据网段计算结束IPv6
      * @param segment
@@ -549,8 +544,6 @@ public class IpUtil {
         abbreviation = abbreviation.replaceAll(":{2,}", "::");
         return abbreviation;
     }
-
-    
 
     /**
      * @Description 根据掩码位数计算掩码

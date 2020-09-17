@@ -12,18 +12,18 @@ package cn.segema.learn.interview.jdk8;
  */
 @FunctionalInterface
 public interface FunctionalInterfaceDemo {
-	void handle(int i);
-	
-	// java.lang.Object中的public方法
+    void handle(int i);
+
+    // java.lang.Object中的public方法
     public boolean equals(Object var1);
- 
+
     // 默认方法
-    public default void defaultMethod(){
-    
+    public default void defaultMethod() {
+
     }
- 
+
     // 静态方法
-    public static void staticMethod(){
- 
+    public static void staticMethod() {
+
     }
 }

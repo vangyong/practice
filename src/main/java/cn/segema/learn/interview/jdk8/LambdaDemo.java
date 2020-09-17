@@ -7,11 +7,16 @@ import java.util.List;
 
 import javax.swing.JButton;
 
+/**
+ * @description Lambda表达式
+ * @author wangyong
+ * @createDate 2020/09/17
+ */
 public class LambdaDemo {
 
 	public static void main(String[] args) {
-		// 1.入门测试
-		// Java 8之前：
+//		// 1.线程实例
+//		// Java 8之前：
 //		new Thread(new Runnable() {
 //			@Override
 //			public void run() {
@@ -21,7 +26,7 @@ public class LambdaDemo {
 //		// Java 8方式：
 //		new Thread(() -> System.out.println("In Java8, Lambda expression rocks")).start();
 
-		// 2.事件处理
+//		// 2.事件监听
 //		// Java 8之前：
 //		JButton show = new JButton("Show");
 //		show.addActionListener(new ActionListener() {
@@ -34,30 +39,30 @@ public class LambdaDemo {
 //		show.addActionListener((e) -> {
 //		    System.out.println("Light, Camera, Action !! Lambda expressions Rocks");
 //		});
-		// 3.集合迭代
+	    
+//		// 3.集合迭代
 //		// Java 8之前：
 //		List<String> features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
 //		for (String feature : features) {
 //		    System.out.println(feature);
 //		}
-//		
 //		// Java 8之后：
 //		List features2 = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
-//		features2.forEach(n -> System.out.println(n));
-//		features2.forEach(System.out::println);
+//		features2.forEach((n) -> System.out.println(n));
 		
 		// 4.集合累加计数
 		// Java 8之前：
-		long count =0;
+		long count1 =0;
 		List<String> strList = Arrays.asList("chengdu", "hangzhou", "beijing", "chengdu");
 		for (String str : strList) {
 		    if (str.equals("chengdu")) {
-		        count++;
+		        count1++;
 		    }
 		}
-		
+		System.out.println(count1);
 		// Java 8之后：
-		count = strList.stream().filter((str -> str.equals("chengdu"))).count();
+		long count2 = strList.stream().filter((str -> str.equals("chengdu"))).count();
+		System.out.println(count2);
 
 	}
 

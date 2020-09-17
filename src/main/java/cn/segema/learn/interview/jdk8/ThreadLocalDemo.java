@@ -3,6 +3,11 @@ package cn.segema.learn.interview.jdk8;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * @description ThreadLocal和ExecutorService线程池 
+ * @author wangyong
+ * @createDate 2020/09/17
+ */
 public class ThreadLocalDemo {
 	
 	static ExecutorService defaultFixedExecutor = Executors.newFixedThreadPool(1);

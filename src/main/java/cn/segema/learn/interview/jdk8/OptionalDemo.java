@@ -2,9 +2,14 @@ package cn.segema.learn.interview.jdk8;
 
 import java.util.Optional;
 
+/**
+ * @description Optional判断空
+ * @author wangyong
+ * @createDate 2020/09/17
+ */
 public class OptionalDemo {
 
-	static String test() {
+    public static String test() {
 		return "a";
 	}
 

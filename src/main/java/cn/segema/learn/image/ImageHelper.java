@@ -12,6 +12,11 @@ import java.awt.image.ColorModel;
 import java.awt.image.WritableRaster;
 import java.io.*;
 
+/**
+ * @description 图片处理工具
+ * @author wangyong
+ * @CreateDate 2020/09/23
+ */
 public class ImageHelper {
 
     // 项目根目录路径
@@ -59,16 +64,11 @@ public class ImageHelper {
 
     /**
      * @description 图片水印
-     * @param imgPath
-     *            待处理图片
-     * @param markPath
-     *            水印图片
-     * @param x
-     *            水印位于图片左上角的 x 坐标值
-     * @param y
-     *            水印位于图片左上角的 y 坐标值
-     * @param alpha
-     *            水印透明度 0.1f ~ 1.0f
+     * @param imgPath 待处理图片
+     * @param markPath 水印图片
+     * @param x 水印位于图片左上角的 x 坐标值
+     * @param y 水印位于图片左上角的 y 坐标值
+     * @param alpha 水印透明度 0.1f ~ 1.0f
      */
     public static void waterMark(String imgPath, String markPath, int x, int y, float alpha) {
         try {
@@ -97,29 +97,19 @@ public class ImageHelper {
     }
 
     /**
-     * 文字水印
-     *
-     * @param imgPath
-     *            待处理图片
-     * @param text
-     *            水印文字
-     * @param font
-     *            水印字体信息
-     * @param color
-     *            水印字体颜色
-     * @param x
-     *            水印位于图片左上角的 x 坐标值
-     * @param y
-     *            水印位于图片左上角的 y 坐标值
-     * @param alpha
-     *            水印透明度 0.1f ~ 1.0f
+     * @description 文字水印
+     * @param imgPath 待处理图片
+     * @param text 水印文字
+     * @param font 水印字体信息
+     * @param color 水印字体颜色
+     * @param x 水印位于图片左上角的 x坐标值
+     * @param y 水印位于图片左上角的 y坐标值
+     * @param alpha 水印透明度 0.1f ~ 1.0f
      */
     public static void textMark(String imgPath, String text, Font font, Color color, int x, int y, float alpha) {
         try {
             Font Dfont = (font == null) ? new Font("宋体", 20, 13) : font;
-
             Image img = ImageIO.read(new File(imgPath));
-
             BufferedImage image =
                 new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_RGB);
             Graphics2D g = image.createGraphics();
@@ -140,13 +130,10 @@ public class ImageHelper {
     }
 
     /**
-     * 读取JPEG图片
-     *
-     * @param filename
-     *            文件名
+     * @description 读取JPEG图片
+     * @param filename 文件名
      * @return BufferedImage 图片对象
      */
-
     public static BufferedImage readJPEGImage(String filename) {
         try {
             InputStream imageIn = new FileInputStream(new File(filename));
@@ -154,22 +141,18 @@ public class ImageHelper {
             JPEGImageDecoder decoder = JPEGCodec.createJPEGDecoder(imageIn);
             // 得到编码后的图片对象
             BufferedImage sourceImage = decoder.decodeAsBufferedImage();
-
             return sourceImage;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
     /**
-     * 读取JPEG图片
-     *
-     * @param filename
-     *            文件名
+     * @description 读取JPEG图片
+     * @param filename 文件名
      * @return BufferedImage 图片对象
      */
     public static BufferedImage readPNGImage(String filename) {
@@ -182,15 +165,12 @@ public class ImageHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
     /**
-     * 
-     * @Description [一句话描述该功能]
-     * @param pixels
-     *            像素
+     * @Description
+     * @param pixels 像素
      * @return int 灰度值
      */
     public static int rgbToGray(int pixels) {
@@ -202,7 +182,10 @@ public class ImageHelper {
     }
 
     /**
-     * @description 计算数组的平均值 @param @param pixels @param @return @return int 平均值 @throws
+     * @description 计算数组的平均值
+     * @param pixels
+     * @return int 平均值
+     * @throws
      */
     public static int average(int[] pixels) {
         float m = 0;

@@ -42,12 +42,10 @@ public class SimilarImageSearch {
     }
 
     /**
-     * 计算"汉明距离"（Hamming distance）。 如果不相同的数据位不超过5，就说明两张图片很相似；如果大于10，就说明这是两张不同的图片。
-     * 
-     * @param sourceHashCode
-     *            源hashCode
-     * @param hashCode
-     *            与之比较的hashCode
+     * @description 计算"汉明距离"（Hamming distance）。 如果不相同的数据位不超过5，就说明两张图片很相似；
+     * 如果大于10，就说明这是两张不同的图片。
+     * @param sourceHashCode 源hashCode
+     * @param hashCode 与之比较的hashCode
      */
     public static int hammingDistance(String sourceHashCode, String hashCode) {
         int difference = 0;
@@ -63,10 +61,8 @@ public class SimilarImageSearch {
     }
 
     /**
-     * 生成图片指纹
-     * 
-     * @param filename
-     *            文件名
+     * @description 生成图片指纹
+     * @param filename 文件名
      * @return 图片指纹
      */
     public static String produceFingerPrint(String filename) {
@@ -111,16 +107,13 @@ public class SimilarImageSearch {
                 + comps[i + 2] * (int)Math.pow(2, 1) + comps[i + 2];
             hashCode.append(binaryToHex(result));
         }
-
         // 得到指纹以后，就可以对比不同的图片，看看64位中有多少位是不一样的。
         return hashCode.toString();
     }
 
     /**
-     * 二进制转为十六进制
-     * 
-     * @param int
-     *            binary
+     * @description 二进制转为十六进制
+     * @param int binary
      * @return char hex
      */
     private static char binaryToHex(int binary) {

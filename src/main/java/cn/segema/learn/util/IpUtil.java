@@ -585,20 +585,36 @@ public class IpUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(ipCheck("::ffff:a0a:1302"));
+//        System.out.println(ipCheck("::ffff:a0a:1302"));
+//        System.out.println(isIpv4("10.10.19.2"));
+//        System.out.println(ipToBigInteger("fe80::"));
+//        System.out.println(bigIntegerToIpv6(new BigInteger("338288524927261089654018896841347694592")));
+//        System.out.println(bigIntegerToIp(new BigInteger("338288524927261089654018896841347694592")));
+//        System.out.println(ipToBigInteger("255.255.255.255"));
+//        System.out.println(ipToBigInteger("::ffff:a0a:1302"));
+//        System.out.println("------------------------------");
+//        System.out.println(ipToBigInteger("10.10.19.2"));
+//        System.out.println(ipToBigInteger("::ffff:10.10.19.2"));
+//        System.out.println(ipToBigInteger("::a0a:1302").intValue());
+//        System.out.println(ipToBigInteger("10.10.19.142"));
+//        System.out.println(ipToBigInteger("10.223.2.2"));
+//        System.out.println(ipToBigInteger("10.10.19.12"));
+        
+        System.out.println(ipCheck("fe80::cd3:a965:f973:6ba3"));
         System.out.println(isIpv4("10.10.19.2"));
-        System.out.println(ipToBigInteger("fe80::"));
-        System.out.println(bigIntegerToIpv6(new BigInteger("338288524927261089654018896841347694592")));
+        System.out.println(ipToBigInteger("182.148.2.213"));
+        System.out.println(ipToBigInteger("fe80::cd3:a965:f973:6ba3"));
+        System.out.println(bigIntegerToIpv6(new BigInteger("338288524927261089654943165445330660259")));
         System.out.println(bigIntegerToIp(new BigInteger("338288524927261089654018896841347694592")));
-        System.out.println(ipToBigInteger("255.255.255.255"));
-        System.out.println(ipToBigInteger("::ffff:a0a:1302"));
-        System.out.println("------------------------------");
-        System.out.println(ipToBigInteger("10.10.19.2"));
-        System.out.println(ipToBigInteger("::ffff:10.10.19.2"));
-        System.out.println(ipToBigInteger("::a0a:1302").intValue());
-        System.out.println(ipToBigInteger("10.10.19.142"));
-        System.out.println(ipToBigInteger("10.223.2.2"));
-        System.out.println(ipToBigInteger("10.10.19.12"));
+//        System.out.println(ipToBigInteger("255.255.255.255"));
+//        System.out.println(ipToBigInteger("::ffff:a0a:1302"));
+//        System.out.println("------------------------------");
+//        System.out.println(ipToBigInteger("10.10.19.2"));
+//        System.out.println(ipToBigInteger("::ffff:10.10.19.2"));
+//        System.out.println(ipToBigInteger("::a0a:1302").intValue());
+//        System.out.println(ipToBigInteger("10.10.19.142"));
+//        System.out.println(ipToBigInteger("10.223.2.2"));
+//        System.out.println(ipToBigInteger("10.10.19.12"));
     }
 
 }
